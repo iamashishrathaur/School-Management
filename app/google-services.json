@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "646320583860",
+    "project_id": "gpmadhogarh-c89e9",
+    "storage_bucket": "gpmadhogarh-c89e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646320583860:android:1eba61797dd1fd3a1813e1",
+        "android_client_info": {
+          "package_name": "com.rathaur.gpm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646320583860-m81h3k4d7dulqc3d3du0kdq08vnt16ud.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rathaur.gpm",
+            "certificate_hash": "e17e7fe35ce1a01729df7c60c9a7c60e0ff53d07"
+          }
+        },
+        {
+          "client_id": "646320583860-thslqlpgvcg0ueadrcppc15eld9te3ul.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdH8Qaw7iXY4NsXsQKaaSp1XsvSOb9fb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "646320583860-thslqlpgvcg0ueadrcppc15eld9te3ul.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

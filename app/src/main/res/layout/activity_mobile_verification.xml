@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F8F8"
+    tools:context=".MobileVerification">
+
+    <ImageView
+        android:id="@+id/otp_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/mobile_verification"
+        android:contentDescription="TODO"/>
+  <TextView
+      android:id="@+id/tv_otp"
+      android:textSize="20sp"
+      android:textStyle="bold"
+      android:layout_marginTop="30dp"
+      android:textColor="@color/black"
+      android:layout_below="@+id/otp_image"
+      android:text="OTP Verification"
+      android:layout_centerHorizontal="true"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tv_discription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_otp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="We will send you an one time otp on this given mobile number"
+        android:textColor="#636363"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_discription"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="Enter Mobile Number"
+        android:textColor="#636363"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/et_mobile"
+     android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_below="@+id/tv_mobile"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/otp_border"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginStart="20dp"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_mobile"
+            android:background="@color/white"
+            android:text="+91"
+            android:textColor="@color/black" />
+        <EditText
+            android:letterSpacing="0.04"
+            android:textColor="@color/black"
+            android:textColorHint="#959292"
+            android:autofillHints="phone"
+            android:layout_marginStart="10dp"
+            android:hint="0000000000"
+            android:textSize="15sp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/user_mobile_number"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginVertical="2dp"
+            android:background="@color/white"
+            android:inputType="number" />
+    </LinearLayout>
+<ProgressBar
+    android:id="@+id/otp_progressbar"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_below="@+id/et_mobile"
+    android:layout_marginHorizontal="30dp"
+    android:layout_marginTop="50dp"
+    android:background="@drawable/login_button"/>
+    <TextView
+        android:id="@+id/user_get_otp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/et_mobile"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/login_button"
+        android:gravity="center"
+        android:text="GET OTP"
+        android:textColor="@color/white"
+        />
+</RelativeLayout>

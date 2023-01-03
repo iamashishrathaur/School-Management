@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:elevation="10dp"
+    android:background="@drawable/dialog_background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="250dp">
+<TextView
+    android:layout_marginStart="15sp"
+    android:layout_marginTop="10dp"
+   android:textColor="@color/black"
+    android:textStyle="bold"
+    android:textSize="20sp"
+    android:text="Complaint here..."
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:id="@+id/b"
+        android:layout_marginTop="60dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/user_ragistation_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="2dp"
+            android:background="@drawable/costom_edit_text"
+            app:boxBackgroundMode="none"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dialog_complaints"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/costom_edit_text"
+                android:lines="1"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:textSize="13sp"
+            android:layout_marginStart="20dp"
+            android:text="Enter Reason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="110dp"
+        android:id="@+id/dilog_cencel"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:text="Cencel"
+        android:textColor="#F2472C"
+        android:layout_alignParentBottom="true"
+        android:layout_width="60dp"
+        android:layout_height="40dp"/>
+    <TextView
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="30dp"
+        android:id="@id/dilog_submit"
+        android:gravity="center"
+        android:text="Submit"
+        android:textColor="#F2472C"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="60dp"
+        android:layout_height="40dp"/>
+    </RelativeLayout>

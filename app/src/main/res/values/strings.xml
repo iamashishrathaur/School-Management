@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">GPM</string>
+    <string name="student_login">Student Login</string>
+    <string name="teacher_login">Teacher Login</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="forgote_password"><u>Forgote Password</u></string>
+    <string name="terms_of_use"><u>Terms of use</u></string>
+    <string name="privacy_policy"><u>Privacy Policy</u></string>
+    <string name="openDrawer">open navigation</string>
+    <string name="closeDrawer">close navigation</string>
+    <string name="resend_otp_again"><u>Resend OTP</u></string>
+    <color name="drawerColor">@color/white</color>
+    <string name="title_activity_student_assignment">StudentAssignment</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

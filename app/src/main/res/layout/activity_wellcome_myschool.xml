@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fffffe"
+    tools:context=".WellcomeMyschool">
+    <TextView
+        android:id="@+id/wlm"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold"
+      android:text="Wellcome to mySchool..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        android:textColor="#6A6A6A"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="30dp"
+        android:text="mySchool is a professional, most trusted and verified school. mobile app developed by mySchool community an internal entity of Innobins Decision Science Pvt Ltd. to simplify the daily life of educators. mySchool offers one of the best e-governance ERP and best-in-class mobile applications to educational institutions such as schools, coaching, and colleges across the india."
+        android:layout_below="@+id/wlm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/wellcome" />
+
+    <TextView
+      android:onClick="Next"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/login_button"
+        android:gravity="center"
+        android:text="Next"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        />
+</RelativeLayout>

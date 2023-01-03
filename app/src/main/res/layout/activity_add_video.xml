@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddVideo">
+    <RelativeLayout
+        android:id="@+id/a"
+        android:layout_marginTop="60dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/user_ragistation_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="2dp"
+            android:background="@drawable/costom_edit_text"
+            app:boxBackgroundMode="none"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/video_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/costom_edit_text"
+                android:lines="1"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:textSize="13sp"
+            android:layout_marginStart="20dp"
+            android:text="Enter Video Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@id/a"
+        android:id="@+id/b"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/user_ragistation_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="2dp"
+            android:background="@drawable/costom_edit_text"
+            app:boxBackgroundMode="none"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/video_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/costom_edit_text"
+                android:lines="1"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:textSize="13sp"
+            android:layout_marginStart="20dp"
+            android:text="Enter/Paste url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:text="Note-Please enter/paste only youtube url (link)"
+        android:layout_below="@id/b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/vedio_submit"
+        android:elevation="10dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:layout_marginHorizontal="30dp"
+        android:textColor="@color/white"
+        android:text="Submit"
+        android:background="@drawable/login_button"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+</RelativeLayout>
