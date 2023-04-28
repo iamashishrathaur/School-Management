@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AboutUs">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/Apvar"
+        app:elevation="10dp"
+        android:background="#F2472C"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <com.google.android.material.navigation.NavigationView
+            android:background="#F2472C"
+            android:elevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/about_us_back_pressed"
+                android:layout_width="60dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_width="70dp"
+                    android:layout_height="20dp"
+                    android:fontFamily="@font/adamina"
+                    android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="About Us"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+        </com.google.android.material.navigation.NavigationView>
+    </com.google.android.material.appbar.AppBarLayout>
+<TextView
+    android:textColor="@color/black"
+    android:textSize="15sp"
+    android:textStyle="bold"
+    android:text="mySchool - A School Management App"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="20dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:textColor="#656464"
+        android:layout_marginStart="20dp"
+        android:text="mySchool is a professional, most trusted and verified school mobile app developed by mySchool community to simplify the daily life of educators. mySchool offers one of the best e-governance ERP designed for better interaction between student, teachers, parents, and management. mySchool app provides timely feedback as well as helps to build a better relationship with parents, thus creating a friendly image for schools. No need to wait anymore for the meeting with school teachers/admin! At a single click, you can get to know your child's progress. Students can get notified easily about events, Timetables, Notices and attendance etc on the go. Without much manual intervention, teachers can give homewor to all the students simultaneously without wasting precious date."
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:textSize="14sp"
+        android:textColor="#656464"
+        android:layout_marginStart="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Normally we can say it is a school management mobile app that supports parent, teacher and school admin\'s communication and helps to know about the daily status of students. mySchool app works on all android mobile phones and assures the perfect organization of school. management activities."
+        />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:textSize="14sp"
+        android:textColor="#656464"
+        android:layout_marginStart="20dp"
+        android:text="mySchool Team,"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:textSize="14sp"
+        android:textColor="#656464"
+        android:layout_marginStart="20dp"
+        android:text="Ashish Rathaur,Rahul Prajapati,"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="14sp"
+        android:textColor="#656464"
+        android:layout_marginStart="20dp"
+        android:text="Kaushal prajapati, and Anoop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="14sp"
+        android:textColor="#656464"
+        android:layout_marginStart="20dp"
+        android:text="government polytechnic madhogarh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="14sp"
+        android:textColor="#656464"
+        android:layout_marginStart="20dp"
+        android:text="Jalaun U.P."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="14sp"
+        android:textColor="#656464"
+        android:layout_marginStart="20dp"
+        android:text="Pin - 285001"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

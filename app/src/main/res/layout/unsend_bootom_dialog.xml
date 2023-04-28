@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:orientation="horizontal"
+    android:weightSum="2">
+<TextView
+    android:textSize="16sp"
+    android:id="@+id/chat_unsent_cancel"
+    android:textColor="@color/black"
+    android:fontFamily="@font/poppins"
+    android:gravity="center"
+    android:text="Cancel"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"/>
+
+    <TextView
+        android:textSize="16sp"
+        android:id="@+id/chat_unsent_confirm"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:text="Unsend"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+</LinearLayout>

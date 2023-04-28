@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:elevation="10dp"
+    android:background="@drawable/dialog_background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="300dp">
+    <TextView
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:text="Report an Issue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/user_ragistation_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+            <EditText
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="10dp"
+                android:hint="Type your issue"
+                android:id="@+id/student_help_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/costom_edit_text"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:maxLines="9"
+                android:minLines="9"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textAllCaps="true"
+            android:id="@+id/student_help_cancel"
+            android:layout_marginStart="25dp"
+            android:gravity="center"
+            android:text="Cancel"
+            android:textSize="15sp"
+            android:textColor="@color/b8b8b8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textAllCaps="true"
+            android:textSize="15sp"
+            android:layout_marginEnd="25dp"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"
+            android:id="@+id/student_help_submit"
+            android:gravity="center"
+            android:text="Send"
+            android:textColor="#F2472C"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+</LinearLayout>

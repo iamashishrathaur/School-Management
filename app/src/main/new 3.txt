@@ -1,0 +1,18 @@
+ Dialog dialogbox = new Dialog(this);
+        dialogbox.setContentView(R.layout.success_dialog);
+        dialogbox.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        dialogbox.setCanceledOnTouchOutside(false);
+        TextView dialogtext = dialogbox.findViewById(R.id.success_dialog_text);
+        dialogtext.setText("Feedback successfully saved");
+		
+		
+		
+		dialogbox.show();
+                    TextView dialogbutton = dialogbox.findViewById(R.id.success_dialog_button);
+                    dialogbutton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            SendFeedback.super.onBackPressed();
+                        }
+                    });
+			

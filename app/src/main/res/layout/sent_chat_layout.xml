@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chat_text_layout"
+    android:layout_width="match_parent"
+    android:padding="5dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/send_chat_text_layout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="100dp"
+        android:background="@drawable/sent_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/send_chat_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:lineSpacingExtra="2dp"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:text="Hello owe "
+            android:textColor="#000000"
+            android:textSize="16.5sp" />
+<LinearLayout
+    android:layout_marginTop="-8dp"
+    android:layout_gravity="end"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+       android:layout_gravity="center"
+        android:id="@+id/send_chat_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/send_chat_text_layout"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:text="12:11"
+        android:textColor="#8C8C8C"
+        android:textSize="13sp"
+        />
+    <RelativeLayout
+        android:layout_marginStart="5dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="2dp"
+      >
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:id="@+id/isSeen"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/seen" />
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:id="@+id/isUnseen"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/unseen"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

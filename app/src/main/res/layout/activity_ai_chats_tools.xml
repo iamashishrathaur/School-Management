@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFE8E0"
+    tools:context=".AiChatsTools">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/Apvar"
+        app:elevation="10dp"
+        android:background="#F2472C"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <RelativeLayout
+            android:background="#F2472C"
+            android:elevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/chat_bot_back_pressed"
+                android:layout_width="60dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_width="70dp"
+                    android:layout_height="20dp"
+                    android:fontFamily="@font/adamina"
+                    android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    tools:ignore="ContentDescription,RtlSymmetry" />
+            </RelativeLayout>
+           <TextView
+               android:textColor="#ffffff"
+               android:textStyle="bold"
+               android:textSize="18sp"
+               android:text="Chat Solution"
+               android:layout_centerInParent="true"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/chat_bot_layout"
+        android:layout_marginBottom="5dp"
+        android:layout_above="@id/chat"
+        android:layout_below="@id/Apvar"
+        android:id="@+id/chat_bot_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:id="@+id/chat"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/chat_bot_edit_text"
+            android:textCursorDrawable="@drawable/chat_cursor"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/chat_bot_send_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chat_edittext_back"
+            android:maxLength="10000"
+            android:maxLines="5"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="12dp"
+            android:textColor="@color/black"
+            tools:ignore="SpeakableTextPresentCheck" />
+        <ImageView
+            android:layout_marginEnd="5dp"
+            android:layout_centerVertical="true"
+            android:padding="15sp"
+            android:src="@drawable/send_message"
+            android:background="@drawable/send_button"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/chat_bot_send_button"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+</RelativeLayout>

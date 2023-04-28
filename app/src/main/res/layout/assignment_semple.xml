@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/home_work_cardView"
+    app:cardCornerRadius="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="10dp"
+    android:layout_height="100dp"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="5dp">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <ImageView
+            android:layout_marginEnd="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/baseline_arrow_forward_ios_24"
+            android:layout_width="15sp"
+            android:layout_height="15sp"/>
+
+        <TextView
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:gravity="end"
+            android:id="@+id/recycle_student_assignment_lastTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12/90/6790"
+            android:textColor="#888787"
+            android:textSize="10sp" />
+        <TextView
+            android:paddingStart="20dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginStart="5dp"
+            android:id="@id/recycle_student_assignment_subject"
+            android:layout_marginTop="15dp"
+            android:text="Subject"
+            android:textSize="15sp"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"/>
+        <TextView
+            android:paddingStart="20dp"
+            android:layout_marginStart="5dp"
+            android:layout_below="@id/recycle_student_assignment_subject"
+            android:id="@+id/recycle_student_assignment_topic"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:layout_marginEnd="40dp"
+            android:text="Topic."
+            android:textColor="@color/b8b8b8"/>
+        <TextView
+            android:id="@+id/recycle_student_assignment_teacher"
+            android:textSize="13sp"
+            android:textColor="@color/purple_500"
+            android:text="Teacher NAme"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

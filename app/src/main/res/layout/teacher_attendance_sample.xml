@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_work_cardView"
+    app:cardCornerRadius="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="4dp"
+    android:layout_height="80dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="5dp"
+    >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <com.makeramen.roundedimageview.RoundedImageView
+            app:riv_corner_radius="100dp"
+            android:padding="10dp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:id="@+id/attendance_imageview"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            >
+        </com.makeramen.roundedimageview.RoundedImageView>
+
+        <TextView
+            android:layout_toStartOf="@id/isPresent"
+            android:layout_marginStart="15dp"
+            android:id="@+id/teacher_attandance_student_name"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/attendance_imageview"
+            android:text="Name"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins"
+            tools:ignore="HardcodedText,TextSizeCheck" />
+        <CheckBox
+            android:buttonTint="#F2472C"
+            android:id="@+id/isPresent"
+            android:layout_marginEnd="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

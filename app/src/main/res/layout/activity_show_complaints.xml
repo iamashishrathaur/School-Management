@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ShowComplaints">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/tool_galery"
+        android:background="#F2472C"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+    <com.google.android.material.navigation.NavigationView
+        android:background="#F2472C"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/show_complaints_back_press"
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_centerVertical="true"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:fontFamily="@font/adamina"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:textSize="18dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/adamina"
+            android:text="Complaints"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
+    </com.google.android.material.navigation.NavigationView>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/complaints_tab"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:tabSelectedTextColor="#F2472C"
+        tools:ignore="SpeakableTextPresentCheck" />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/complaints_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

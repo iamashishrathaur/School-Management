@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+        <RelativeLayout
+            android:layout_gravity="center"
+            android:background="@drawable/round_border"
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+            <ImageView
+                android:layout_centerInParent="true"
+                android:src="@drawable/update"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:text="Update Required"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/success_dialog_text"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="This my school version is not supported please make sure to update with latest version"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/update_cancel"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Cancel"
+                android:textSize="16sp"
+                android:textColor="@color/teal_700"
+                android:textStyle="bold"
+                android:background="@drawable/cancel_button"
+                android:layout_width="100dp"
+                android:layout_height="45dp"/>
+            <TextView
+                android:id="@+id/update"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Update"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@drawable/success_botton"
+                android:layout_width="100dp"
+                android:layout_height="45dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
