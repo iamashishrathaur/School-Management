@@ -10,8 +10,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter()
         maven { url 'https://jitpack.io' }
+        maven {url = "https://jcenter.bintray.com"}
     }
 }
 rootProject.name = "GPM"

@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item name="student_year_back" type="id" />
+    <item name="user_enrollment_box" type="id" />
+    <item name="student_email" type="id" />
+    <item name="_student_email" type="id" />
+    <item name="idcard_student_print" type="id" />
+    <item name="calender_picker" type="id" />
+    <item name="recycle_student_subject_name" type="id" />
+    <item name="dilog_submit" type="id" />
+    <item name="recycle_student_class" type="id" />
     <item name="application_resion_edittext" type="id" />
     <item name="recycle_student_application_subject" type="id" />
+    <item name="teacher_application_resion_edittext" type="id" />
+    <item name="teacher_assignment_topic_edittext" type="id" />
+    <item name="recycle_student_assignment_subject" type="id" />
+
 </resources>

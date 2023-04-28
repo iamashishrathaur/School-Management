@@ -1,44 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="bottom"
     android:background="#F2472C"
     android:paddingBottom="10dp"
     android:layout_height="150dp">
+
     <TextView
+        android:id="@+id/_teacher_profession"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/alegreya_sc"
-        android:text="Administer"
+        android:text="Admin"
         android:textColor="@color/white"
         android:textSize="12sp"
         />
-    <ImageView
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
-        android:contentDescription="Header Image"
-        />
-
+    <androidx.cardview.widget.CardView
+        app:cardElevation="10dp"
+        app:cardCornerRadius="60dp"
+        android:gravity="center"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center">
+        <RelativeLayout
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:elevation="10dp"
+                app:riv_corner_radius="1000dp"
+                android:src="@drawable/user_profile"
+                android:id="@+id/teacher_image_click"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Header Image" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
     <TextView
+        android:gravity="center"
+        android:id="@+id/_teacher_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/asul"
-        android:text="Dharmendra Gupta"
+        android:text=""
         android:textColor="@color/white"
         android:textSize="15dp" />
     <TextView
+        android:id="@+id/_teacher_email"
         android:layout_gravity="center"
+        android:gravity="center"
         android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GovermentPolytechnicMadhoghar@gmail.com"
+        android:text=""
         android:textSize="13dp"
         android:fontFamily="@font/asul"/>
 </LinearLayout>

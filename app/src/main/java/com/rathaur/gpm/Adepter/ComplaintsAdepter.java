@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.rathaur.gpm.DataBase.Student;
+import com.rathaur.gpm.DataBaseModal.Student;
 import com.rathaur.gpm.R;
 
 public class ComplaintsAdepter extends FirebaseRecyclerAdapter<Student,ComplaintsAdepter.ViewHolder> {
@@ -22,6 +22,7 @@ public class ComplaintsAdepter extends FirebaseRecyclerAdapter<Student,Complaint
     protected void onBindViewHolder(@NonNull ComplaintsAdepter.ViewHolder holder, int position, @NonNull Student model) {
      holder.complaints.setText(model.getScomplaints());
      holder.date.setText(model.getSdate());
+
     }
     @NonNull
     @Override
@@ -32,7 +33,8 @@ public class ComplaintsAdepter extends FirebaseRecyclerAdapter<Student,Complaint
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView complaints,date;
+        final TextView complaints;
+        final TextView date;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             complaints=itemView.findViewById(R.id.your_complaints);

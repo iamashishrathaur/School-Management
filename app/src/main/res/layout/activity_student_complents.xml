@@ -11,21 +11,26 @@
         android:background="#F2472C"
         android:layout_width="match_parent"
         android:layout_height="50dp">
-        <androidx.appcompat.widget.Toolbar
+        <com.google.android.material.navigation.NavigationView
+            android:background="#F2472C"
             android:elevation="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <ImageView
-                android:id="@+id/attendance_back_pressed"
-                android:background="@drawable/back_effect"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="start"
-                android:fontFamily="@font/adamina"
-                android:src="@drawable/ic_baseline_arrow_back_ios_24"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:textSize="18dp"/>
+            <RelativeLayout
+                android:id="@+id/student_complaints_back_pressed"
+                android:layout_width="60dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_width="70dp"
+                    android:layout_height="20dp"
+                    android:fontFamily="@font/adamina"
+                    android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
+            </RelativeLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,7 +41,7 @@
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:textSize="18dp"/>
-        </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.navigation.NavigationView>
     </com.google.android.material.appbar.AppBarLayout>
 <androidx.recyclerview.widget.RecyclerView
     android:layout_marginTop="5dp"
@@ -44,15 +49,42 @@
     android:layout_below="@id/Apvar"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"/>
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/complaints_empty"
+        android:layout_centerInParent="true"
+        android:src="@drawable/empty_box"
+        android:layout_width="150dp"
+        android:layout_height="160dp"/>
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/complaints_empty_text"
+        android:layout_below="@id/complaints_empty"
+        android:textColor="#7E8FA3"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:layout_centerInParent="true"
+        android:text="No Record Found"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:onClick="fillComplent"
+
+        android:onClick="fillComplaints"
         android:id="@+id/floatingActionButton2"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="20dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        app:srcCompat="@drawable/baseline_close_24" />
+        android:backgroundTint="#F2472C"
+        app:borderWidth="0dp"
+        android:elevation="10dp"
+        app:srcCompat="@drawable/baseline_add_24"
+        app:tint="@color/white"
+        android:focusable="true"
+        android:contentDescription="TODO"
+        tools:ignore="UsingOnClickInXml" />
 </RelativeLayout>

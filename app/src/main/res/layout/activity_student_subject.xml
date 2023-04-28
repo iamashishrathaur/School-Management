@@ -3,56 +3,130 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="#E0E0E0"
-    >
+    tools:context=".StudentSubject">
        <com.google.android.material.appbar.AppBarLayout
            app:elevation="10dp"
            android:background="#F2472C"
            android:layout_width="match_parent"
            android:layout_height="50dp">
-              <androidx.appcompat.widget.Toolbar
+              <com.google.android.material.navigation.NavigationView
+                  android:background="#F2472C"
                   android:elevation="10dp"
                   android:layout_width="match_parent"
                   android:layout_height="match_parent">
-                     <ImageView
-                         android:background="@drawable/back_effect"
-                         android:layout_width="20dp"
-                         android:layout_height="20dp"
-                         android:layout_gravity="start"
-                         android:fontFamily="@font/adamina"
-                         android:src="@drawable/ic_baseline_arrow_back_ios_24"
-                         android:textColor="#ffffff"
-                         android:textStyle="bold"
-                         android:textSize="18dp"/>
+                     <RelativeLayout
+                         android:id="@+id/student_subject_back_pressed"
+                         android:layout_width="60dp"
+                         android:layout_height="match_parent">
+                            <ImageView
+                                android:layout_centerVertical="true"
+                                android:layout_width="70dp"
+                                android:layout_height="20dp"
+                                android:fontFamily="@font/adamina"
+                                android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                tools:ignore="ContentDescription" />
+                     </RelativeLayout>
                      <TextView
                          android:id="@+id/year_name"
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
                          android:layout_gravity="center"
                          android:fontFamily="@font/adamina"
-                         android:text="First Year Subject"
+                         android:text="Subject"
                          android:textAlignment="center"
                          android:textColor="#ffffff"
                          android:textStyle="bold"
-                         android:textSize="18dp"/>
-              </androidx.appcompat.widget.Toolbar>
+                         android:textSize="18sp"
+                         tools:ignore="HardcodedText,VisualLintOverlap" />
+              </com.google.android.material.navigation.NavigationView>
        </com.google.android.material.appbar.AppBarLayout>
-       <RelativeLayout
+       <ScrollView
            android:layout_width="match_parent"
            android:layout_height="match_parent">
-              <include layout="@layout/first_year_subject"
-                  android:layout_height="match_parent"
+       <LinearLayout
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+              <LinearLayout
+                  android:layout_marginTop="5dp"
+                  android:layout_marginHorizontal="5dp"
+                  android:layout_gravity="center"
+                  android:gravity="center"
+                  android:weightSum="3"
                   android:layout_width="match_parent"
-                 />
-              <include layout="@layout/second_year_subject"
-                  android:layout_height="match_parent"
+                  android:background="#FFFFFE"
+                  android:layout_height="50dp">
+                     <LinearLayout
+                         android:background="#B8B8B8"
+                         android:layout_width="50dp"
+                         android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="Sem."
+                                android:textAlignment="center"
+                                android:textColor="#616161"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+                     </LinearLayout>
+                     <TextView
+                         android:layout_marginStart="2dp"
+                         android:gravity="center"
+                         android:background="#F2472C"
+                         android:textAlignment="center"
+                         android:layout_weight="1"
+                         android:textColor="#FFFFFE"
+                         android:textStyle="bold"
+                         android:layout_centerVertical="true"
+                         android:text="Subject Name"
+                         android:layout_width="0dp"
+                         android:layout_height="match_parent"
+                         tools:ignore="HardcodedText,ObsoleteLayoutParam" />
+                     <TextView
+                         android:layout_marginStart="2dp"
+                         android:gravity="center"
+                         android:background="#777777"
+                         android:textAlignment="center"
+                         android:layout_weight="1"
+                         android:textColor="#FFFFFE"
+                         android:textStyle="bold"
+                         android:layout_centerVertical="true"
+                         android:text="Type"
+                         android:layout_width="0dp"
+                         android:layout_height="match_parent"
+                         tools:ignore="HardcodedText,ObsoleteLayoutParam" />
+                     <TextView
+                         android:layout_marginStart="2dp"
+                         android:gravity="center"
+                         android:background="#777777"
+                         android:textAlignment="center"
+                         android:layout_weight="1"
+                         android:textColor="#FFFFFE"
+                         android:textStyle="bold"
+                         android:layout_centerVertical="true"
+                         android:text="Teacher"
+                         android:layout_width="0dp"
+                         android:layout_height="match_parent"
+                         tools:ignore="HardcodedText,ObsoleteLayoutParam" />
+              </LinearLayout>
+              <View
+                  android:layout_marginVertical="5dp"
+                  android:background="#F2472C"
                   android:layout_width="match_parent"
-                 />
-              <include
-                  layout="@layout/third_year_subject"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  />
-       </RelativeLayout>
+                  android:layout_height="30dp"/>
+             <androidx.recyclerview.widget.RecyclerView
+                 android:overScrollMode="never"
+                 android:id="@+id/recycler_subject_list"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent" />
+       </LinearLayout>
+       </ScrollView>
 </LinearLayout>

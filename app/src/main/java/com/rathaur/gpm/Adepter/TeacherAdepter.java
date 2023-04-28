@@ -1,7 +1,6 @@
 package com.rathaur.gpm.Adepter;
 
 import android.content.Context;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.rathaur.gpm.DataBase.Teacher;
+import com.rathaur.gpm.DataBaseModal.Teacher;
 import com.rathaur.gpm.R;
 import com.squareup.picasso.Picasso;
 
@@ -26,10 +25,11 @@ public class TeacherAdepter extends FirebaseRecyclerAdapter<Teacher,TeacherAdept
     @Override
     protected void onBindViewHolder(@NonNull TeacherAdepter.ViewHolder holder, int position, @NonNull Teacher model) {
         Context context=holder.itemView.getContext();
-        Picasso.get().load(model.getTimage()).fit().into(holder.imageView);
+        Picasso.get().load(model.getTimage()).fit().placeholder(R.drawable.chat_user).into(holder.imageView);
         holder.name.setText(model.getTname());
         holder.mobile.setText(model.getTmobile());
         holder.itemView.setAnimation(AnimationUtils.loadAnimation(context,R.anim.recycler_anim));
+
     }
 
     @NonNull
@@ -41,8 +41,9 @@ public class TeacherAdepter extends FirebaseRecyclerAdapter<Teacher,TeacherAdept
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
-        TextView name,mobile;
+        final ImageView imageView;
+        final TextView name;
+        final TextView mobile;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name=itemView.findViewById(R.id.recycle_teacher_name);

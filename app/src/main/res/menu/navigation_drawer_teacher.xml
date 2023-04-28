@@ -3,44 +3,53 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:ignore="ExtraText">
-    <group android:checkableBehavior="single">
-        <item android:id="@+id/home"
+    <group >
+        <item android:id="@+id/home_teacher"
             android:icon="@drawable/home"
             android:title="Home"/>
-        <item android:title="profile"
-            android:icon="@drawable/profile"
-            android:id="@+id/profile"/>
-        <item android:id="@+id/about"
+        <item android:id="@+id/about_teacher"
             android:icon="@drawable/about"
             android:title="About Us"/>
-        <item android:id="@+id/About_us"
+        <item android:id="@+id/About_us_teacher"
             android:icon="@drawable/school"
             android:title="About School"/>
     </group>
-    <group android:checkableBehavior="single">
+    <group >
         <item android:title="Communication">
             <menu>
-                <item android:id="@+id/Contact"
+                <item android:id="@+id/Feedback_teacher"
+                    android:icon="@drawable/feedback"
+                    android:title="Feedback"/>
+                <item android:id="@+id/Contact_teacher"
                     android:icon="@drawable/contact"
                     android:title="Contact us"/>
-                <item android:id="@+id/Help"
+                <item android:id="@+id/Help_teacher"
                     android:title="Help &amp; Support"
                     android:icon="@drawable/help"/>
-                <item android:id="@+id/privacy"
+                <item android:id="@+id/privacy_teacher"
                     android:icon="@drawable/privacy"
                     android:title="Privacy Policy"/>
             </menu>
         </item>
     </group>
-    <group android:checkableBehavior="single">
+    <group>
+        <item android:title="Admin">
+            <menu>
+                <item android:id="@+id/admin_teacher"
+                    android:title="Administrator"
+                    android:icon="@drawable/admin"/>
+            </menu>
+        </item>
+    </group>
+    <group>
         <item android:title="Setting">
             <menu>
                 <item android:title="Change Password"
                     android:icon="@drawable/padlock"
-                    android:id="@+id/change_password"/>
+                    android:id="@+id/change_password_teacher"/>
                 <item android:title="Logout"
                     android:icon="@drawable/logout"
-                    android:id="@+id/logout"/>
+                    android:id="@+id/logout_teacher"/>
             </menu>
         </item>
     </group>

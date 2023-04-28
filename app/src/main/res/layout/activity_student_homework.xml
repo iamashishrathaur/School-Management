@@ -12,10 +12,25 @@
         android:background="#F2472C"
         android:layout_width="match_parent"
         android:layout_height="50dp">
-        <androidx.appcompat.widget.Toolbar
+        <com.google.android.material.navigation.NavigationView
+            android:background="#F2472C"
             android:elevation="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/homework_back_pressed"
+                android:layout_width="60dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_width="70dp"
+                    android:layout_height="20dp"
+                    android:fontFamily="@font/adamina"
+                    android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+            </RelativeLayout>
             <TextView
 
                 android:layout_width="wrap_content"
@@ -26,15 +41,22 @@
                 android:textAlignment="center"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:textSize="18sp"/>
-        </androidx.appcompat.widget.Toolbar>
+                android:textSize="18sp"
+                tools:ignore="VisualLintOverlap" />
+        </com.google.android.material.navigation.NavigationView>
     </com.google.android.material.appbar.AppBarLayout>
 
+<ScrollView
+    android:layout_below="@id/Apvar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
 
 <RelativeLayout
-
     android:id="@id/calender_picker"
-    android:layout_below="@id/Apvar"
     android:layout_marginTop="10dp"
     android:layout_marginHorizontal="10dp"
     android:layout_width="match_parent"
@@ -44,7 +66,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginStart="20dp"
         android:layout_centerVertical="true"
-        android:textSize="17dp"
+        android:textSize="17sp"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:id="@+id/date_time_formate"
@@ -57,16 +79,17 @@
         android:src="@drawable/calendar"
         android:layout_width="20dp"
         android:layout_height="20dp"/>
+
     <TextView
-        android:layout_marginTop="5dp"
-        android:textSize="12dp"
-        android:layout_marginStart="20dp"
-        android:text="Select Date*"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:text="Select Date*"
+        android:textSize="12sp"
+        tools:ignore="TextSizeCheck" />
 </RelativeLayout>
 <RelativeLayout
-    android:layout_below="@id/calender_picker"
     android:id="@+id/b"
     android:layout_marginTop="10dp"
     android:layout_marginHorizontal="10dp"
@@ -83,27 +106,30 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="2dp"
        >
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/student_homework_edittext_subject"
-            android:textSize="17dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:background="@drawable/costom_edit_text"
-            android:lines="1"
-            android:inputType="text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@drawable/costom_edit_text"
+            android:inputType="text"
+            android:lines="1"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
     </com.google.android.material.textfield.TextInputLayout>
+
     <TextView
-        android:layout_marginTop="5dp"
-        android:textSize="12dp"
-        android:layout_marginStart="20dp"
-        android:text="Subject*"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:text="Subject*"
+        android:textSize="12sp"
+        tools:ignore="TextSizeCheck" />
 </RelativeLayout>
     <RelativeLayout
-        android:layout_below="@id/b"
         android:id="@id/c"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="10dp"
@@ -120,27 +146,30 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
             >
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/student_homework_edittext_heading"
-                android:textSize="17dp"
-                android:textColor="@color/black"
-                android:background="@drawable/costom_edit_text"
-                android:lines="1"
-                android:inputType="text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:background="@drawable/costom_edit_text"
+                android:inputType="text"
+                android:lines="1"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,VisualLintTextFieldSize" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <TextView
-            android:layout_marginTop="5dp"
-            android:textSize="12dp"
-            android:layout_marginStart="20dp"
-            android:text="Heading*"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="Heading*"
+            android:textSize="12sp"
+            tools:ignore="TextSizeCheck" />
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/d"
-        android:layout_below="@id/c"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="10dp"
         android:background="@drawable/user_ragistation_border"
@@ -156,26 +185,29 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             >
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/student_homework_edittext_content"
-                android:textSize="17dp"
-                android:textColor="@color/black"
-                android:background="@drawable/costom_edit_text"
-                android:inputType="textMultiLine"
-                android:gravity="top"
-                android:maxLines="100"
-                android:minLines="7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                />
+                android:background="@drawable/costom_edit_text"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:maxLines="100"
+                android:minLines="7"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <TextView
-            android:layout_marginTop="5dp"
-            android:textSize="12dp"
-            android:layout_marginStart="20dp"
-            android:text="Content*"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="Content*"
+            android:textSize="12sp"
+            tools:ignore="TextSizeCheck" />
     </RelativeLayout>
     <TextView
         android:id="@+id/student_homework_submit"
@@ -184,9 +216,10 @@
         android:textColor="@color/white"
         android:gravity="center"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="100dp"
-        android:layout_below="@+id/d"
+        android:layout_marginTop="50dp"
         android:background="@drawable/login_button"
         android:layout_width="match_parent"
         android:layout_height="45dp"/>
+  </LinearLayout>
+</ScrollView>
 </RelativeLayout>

@@ -5,11 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:openDrawer="start"
-    tools:context=".NavigationDrawerTeacher">
+    tools:context=".NavigationDrawerTeacher"
+    android:id="@+id/teacher_navigation_drawer">
     <include layout="@layout/activity_home_teacher"
         android:layout_height="match_parent"
         android:layout_width="match_parent"/>
 <com.google.android.material.navigation.NavigationView
+    android:id="@+id/navigation_teacher"
     android:layout_gravity="start"
     app:menu="@menu/navigation_drawer_teacher"
     app:headerLayout="@layout/header_layout_teacher"

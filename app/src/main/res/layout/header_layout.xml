@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -9,59 +9,90 @@
     android:layout_height="150dp">
 
     <TextView
+        android:layout_marginTop="1dp"
         android:id="@+id/_student_profession"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
+        android:layout_alignParentEnd="true"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/alegreya_sc"
-        android:text="Admin"
         android:textColor="@color/white"
-        android:textSize="12sp"
-        />
-    <androidx.cardview.widget.CardView
-        app:cardElevation="10dp"
-        app:cardCornerRadius="60dp"
-        android:gravity="center"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center">
-        <RelativeLayout
+        android:textSize="12sp"/>
+              <RelativeLayout
+                android:id="@+id/rl"
+                android:layout_marginBottom="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    app:cardElevation="5dp"
+                    android:id="@+id/about_school_logo"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="10dp"
+                    app:cardCornerRadius="100dp" >
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:scaleType="fitXY"
+                            app:riv_corner_radius="100dp"
+                            android:id="@+id/student_image_click"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ProgressBar
+                            android:visibility="gone"
+                            android:id="@+id/student_image_progress"
+                            android:max="100"
+                            android:progress="0"
+                            android:indeterminateTintMode="src_atop"
+                            android:indeterminateTint="#F2472C"
+                            android:layout_centerInParent="true"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_marginTop="10dp"
+                    app:cardElevation="8dp"
+                    android:layout_toEndOf="@id/about_school_logo"
+                    android:layout_marginStart="-25dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    app:cardCornerRadius="30dp">
+                    <ImageView
+                        android:padding="5dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/camera"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+    <LinearLayout
+        android:layout_marginTop="-20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/rl"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center"
+            android:id="@+id/_student_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/asul"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@id/_student_email"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        <ProgressBar
-            android:id="@+id/student_image_progress"
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <ImageView
-            android:src="@drawable/user_profile"
-            android:id="@+id/student_image_click"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="Header Image" />
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-    <TextView
-        android:gravity="center"
-        android:id="@+id/_student_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/asul"
-        android:text=""
-        android:textColor="@color/white"
-        android:textSize="15dp" />
-    <TextView
-        android:id="@id/_student_email"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="13dp"
-        android:fontFamily="@font/asul"/>
-</LinearLayout>
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:fontFamily="@font/asul"/>
+    </LinearLayout>
+</RelativeLayout>

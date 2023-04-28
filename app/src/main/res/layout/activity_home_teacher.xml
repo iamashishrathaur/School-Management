@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#E0E0E0"
     tools:context=".HomeTeacher">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/navigation_click"
@@ -12,58 +12,606 @@
         android:background="#F2472C"
         android:elevation="10dp"
         android:layout_height="55dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/teacher_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <ImageView
+                <RelativeLayout
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/logo_border"
                     android:id="@+id/image"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/book" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp">
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/book"
+                        android:contentDescription="TODO" />
+                </RelativeLayout>
 
                 <TextView
+                    android:letterSpacing="0.04"
                     android:id="@+id/text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_toEndOf="@+id/image"
-                    android:fontFamily="@font/aclonica"
-                    android:text="MySchool"
+                    android:textStyle="bold"
+                    android:text="mySchool"
                     android:textColor="@color/white"
-                    android:textSize="18dp" />
-                <TextView
-                    android:layout_marginStart="10dp"
-                    android:layout_below="@+id/text"
-                    android:layout_toEndOf="@+id/image"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"
-                    android:text="Your Digital Manager"
-                    android:textAllCaps="true"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/image"
+                    android:textStyle="bold"
+                    android:text="Your Digital Manager"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="9sp"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/teacher_year"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
                     android:layout_marginEnd="30dp"
-                    android:fontFamily="@font/aclonica"
+                    android:fontFamily="@font/actor"
                     android:gravity="center"
                     android:text="2021-2022"
-                    android:textColor="@drawable/year_text_color"
-                    android:textSize="10sp" />
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    tools:ignore="SmallSp" />
             </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
+        </RelativeLayout>
     </com.google.android.material.appbar.AppBarLayout>
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#FFFFFF" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.denzcoskun.imageslider.ImageSlider
+                android:background="@color/white"
+                android:layout_marginHorizontal="5dp"
+                android:scrollbarSize="10dp"
+                app:iss_error_image="@drawable/error"
+                app:iss_selected_dot="@drawable/default_selected_dot"
+                app:iss_unselected_dot="@drawable/default_unselected_dot"
+                android:id="@+id/teacher_image_slider"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                app:iss_auto_cycle="true"
+                app:iss_period="1000"
+                app:iss_delay="100"/>
+            <TextView
+                android:textStyle="bold"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/adamina"
+                android:paddingStart="20dp"
+                android:text="Student"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:ignore="RtlSymmetry" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="210dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:weightSum="3"
+                    android:layout_height="0dp">
+                    <androidx.cardview.widget.CardView
+                        app:cardElevation="0dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:id="@+id/teacher_student_list"
+                            android:background="@drawable/hover_effect"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:layout_marginTop="-10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/stusent_list"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"/>
+                        <TextView
+                            android:layout_marginStart="-3dp"
+                            android:textColor="#394D71"
+                            android:textSize="14sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="Student List"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        app:cardElevation="0dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:id="@+id/teacher_syllabus"
+                            android:background="@drawable/hover_effect"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:layout_marginTop="-10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/syllabus"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"/>
+                        <TextView
+                            android:textColor="#394D71"
+                            android:textSize="14sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="Syllabus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        app:cardElevation="0dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:id="@+id/teacher_card_attendance"
+                            android:background="@drawable/hover_effect"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:layout_marginTop="-10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/attendance"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"/>
+                        <TextView
+                            android:textColor="#394D71"
+                            android:textSize="14sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="Attendance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:weightSum="3"
+                    android:layout_marginTop="8dp"
+                    android:layout_height="0dp">
+                    <androidx.cardview.widget.CardView
+                        app:cardElevation="0dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        tools:ignore="NestedWeights">
+                        <RelativeLayout
+                            android:id="@+id/teacher_assignment"
+                            android:background="@drawable/hover_effect"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:layout_marginTop="-10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/assignment"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"/>
+                        <TextView
+                            android:textColor="#394D71"
+                            android:textSize="14sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="Assignment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        app:cardElevation="0dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        tools:ignore="NestedWeights">
+                        <RelativeLayout
+                            android:id="@+id/teacher_std_materials"
+                            android:background="@drawable/hover_effect"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:layout_marginTop="-10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/study"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"/>
+                        <TextView
+                            android:textColor="#394D71"
+                            android:textSize="14sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="Std. Materials"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:textStyle="bold"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/adamina"
+                android:paddingStart="20dp"
+                android:text="Teacher"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:ignore="RtlSymmetry" />
+            <LinearLayout
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical"
+                android:weightSum="3"
+                android:layout_width="match_parent"
+                android:layout_height="310dp">
+                <LinearLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:weightSum="3"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal">
+                    <androidx.cardview.widget.CardView
+                        app:cardElevation="0dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:id="@+id/card_teacher_list"
+                            android:background="@drawable/hover_effect"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:layout_marginTop="-10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/teacher"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"/>
+                        <TextView
+                            android:textColor="#394D71"
+                            android:textSize="14sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="Teacher List"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        app:cardElevation="0dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:id="@+id/teacher_card_teacher_attendance"
+                            android:background="@drawable/hover_effect"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:layout_marginTop="-10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/attendance"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"/>
+                        <TextView
+                            android:textColor="#394D71"
+                            android:textSize="14sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="Attendance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        app:cardElevation="0dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:id="@+id/teacher_gallery"
+                            android:background="@drawable/hover_effect"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:layout_marginTop="-10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/gallery"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"/>
+                        <TextView
+                            android:textColor="#394D71"
+                            android:textSize="14sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="Gallery"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:weightSum="3"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    >
+
+
+
+                    <androidx.cardview.widget.CardView
+                        app:cardElevation="0dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:id="@+id/teacher_application"
+                            android:background="@drawable/hover_effect"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:layout_marginTop="-10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/apllication"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"/>
+                        <TextView
+                            android:textColor="#394D71"
+                            android:textSize="14sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="Application"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        app:cardElevation="0dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:id="@+id/teacher_complaints"
+                            android:background="@drawable/hover_effect"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:layout_marginTop="-10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/notic"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"/>
+                        <TextView
+                            android:textColor="#394D71"
+                            android:textSize="14sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="Complaint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        app:cardElevation="0dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:id="@+id/teacher_notice"
+                            android:background="@drawable/hover_effect"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:layout_marginTop="-10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/notice"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"/>
+                        <TextView
+                            android:textColor="#394D71"
+                            android:textSize="14sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="Notice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+<!--                                          -->
+                <LinearLayout
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:weightSum="3"
+                    android:layout_height="0dp">
+                    <androidx.cardview.widget.CardView
+                        app:cardElevation="0dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:id="@+id/teacher_events"
+                            android:background="@drawable/hover_effect"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:layout_marginTop="-10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/event"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"/>
+                        <TextView
+                            android:textColor="#394D71"
+                            android:textSize="14sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="Events"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        app:cardElevation="0dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:id="@+id/teacher_card_chat"
+                            android:background="@drawable/hover_effect"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:layout_marginTop="-10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/chat"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"/>
+                        <TextView
+                            android:textColor="#394D71"
+                            android:textSize="14sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="Chat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        app:cardElevation="0dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:id="@+id/teacher_card_chat_solution"
+                            android:background="@drawable/hover_effect"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:layout_marginTop="-10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/chatbot"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"/>
+                        <TextView
+                            android:textColor="#394D71"
+                            android:textSize="14sp"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="Chat Solution"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+<!--                                            -->
+            </LinearLayout>
+<!--           -->
+<!--            <LinearLayout-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:orientation="vertical"-->
+<!--                android:weightSum="1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="100dp">-->
+<!--                <LinearLayout-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:weightSum="3"-->
+<!--                    android:layout_height="0dp">-->
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        app:cardElevation="0dp"-->
+<!--                        android:layout_marginHorizontal="3dp"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        tools:ignore="NestedWeights">-->
+<!--                        <RelativeLayout-->
+<!--                            android:id="@+id/card_administrator"-->
+<!--                            android:background="@drawable/hover_effect"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"/>-->
+<!--                        <ImageView-->
+<!--                            android:layout_marginTop="-10dp"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:src="@drawable/admin_protection"-->
+<!--                            android:layout_width="40dp"-->
+<!--                            android:layout_height="40dp"-->
+<!--                            android:contentDescription="TODO" />-->
+<!--                        <TextView-->
+<!--                            android:textColor="#394D71"-->
+<!--                            android:textSize="14sp"-->
+<!--                            android:layout_marginTop="30dp"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:text="Administrator"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"/>-->
+<!--                    </androidx.cardview.widget.CardView>-->
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>

@@ -7,18 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.MediaController;
 import android.widget.TextView;
-import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.rathaur.gpm.DataBase.Video;
+import com.rathaur.gpm.DataBaseModal.Video;
 import com.rathaur.gpm.R;
 import com.rathaur.gpm.VideoPlayer;
 
@@ -30,21 +26,22 @@ public class StudentVideo extends FirebaseRecyclerAdapter<Video,StudentVideo.vie
 
     @Override
     protected void onBindViewHolder(@NonNull StudentVideo.viewHolder holder, int position, @NonNull Video model) {
-     Context context=holder.itemView.getContext();
-     holder.time.setText(model.getVtime());
-     holder.title.setText(model.getVtitle());
+        Context context=holder.itemView.getContext();
+        holder.time.setText(model.getVtime());
+        holder.title.setText(model.getVtitle());
 
-     holder.itemView.setAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(),R.anim.recycler_anim));
+        holder.itemView.setAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(),R.anim.recycler_anim));
 
-     holder.itemView.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View view) {
-             Intent intent=new Intent(context, VideoPlayer.class);
-             intent.putExtra("videoUrl",model.getVurl());
-             intent.putExtra("videoTitle",model.getVtitle());
-             context.startActivity(intent);
-         }
-     });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, VideoPlayer.class);
+                intent.putExtra("videoUrl",model.getVurl());
+                intent.putExtra("videoTitle",model.getVtitle());
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @NonNull
@@ -55,7 +52,8 @@ public class StudentVideo extends FirebaseRecyclerAdapter<Video,StudentVideo.vie
     }
 
     public class viewHolder extends RecyclerView.ViewHolder {
-       TextView time,title;
+        final TextView time;
+        final TextView title;
         @SuppressLint("SetJavaScriptEnabled")
         public viewHolder(@NonNull View itemView) {
             super(itemView);

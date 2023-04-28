@@ -1,55 +1,41 @@
 package com.rathaur.gpm;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Picture;
-import android.net.Uri;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.provider.MediaStore;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 import com.rathaur.gpm.Adepter.RecycleAdepter;
-import com.rathaur.gpm.DataBase.Gallery;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import com.rathaur.gpm.DataBaseModal.Gallery;
 
 public class StudentGelary extends AppCompatActivity {
 FloatingActionButton open_gallery;
 RecyclerView recyclerView;
 RecycleAdepter adepter;
+ImageView empty;
+TextView emptyText;
+Dialog dialogbox;
 
+ @SuppressLint("MissingInflatedId")
  @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,17 +43,33 @@ RecycleAdepter adepter;
         getSupportActionBar().hide();
         open_gallery=findViewById(R.id.open_gallery);
         recyclerView=findViewById(R.id.recycle_image_view);
-        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        emptyText=findViewById(R.id.gallery_empty_text);
+        empty=findViewById(R.id.gallery_empty);
+     dialogbox= new Dialog(this);
+     dialogbox.setContentView(R.layout.progress_dialog);
+     dialogbox.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+     dialogbox.setCanceledOnTouchOutside(false);
+
+     @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+     RelativeLayout back=findViewById(R.id.gelary_back_pressed);
+     back.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+             onBackPressed();
+         }
+     });
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+        recyclerView.setHasFixedSize(true);
         FirebaseRecyclerOptions<Gallery> option= new FirebaseRecyclerOptions.Builder<Gallery>()
                 .setQuery(FirebaseDatabase.
                         getInstance().getReference().child("Gallery"),Gallery.class).build();
         adepter=new RecycleAdepter(option);
         recyclerView.setAdapter(adepter);
-
         open_gallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),GetImage.class));
+                finish();
             }
         });
 
@@ -75,12 +77,40 @@ RecycleAdepter adepter;
     @Override
     protected void onStart() {
         super.onStart();
-        adepter.startListening();
+        dialogbox.show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                adepter.startListening();
+                DatabaseReference databaseReference=FirebaseDatabase.
+                        getInstance().getReference().child("Gallery");
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists()){
+                           dialogbox.dismiss();
+                        }
+                        else {
+                            dialogbox.dismiss();
+                            emptyText.setVisibility(View.VISIBLE);
+                            empty.setVisibility(View.VISIBLE);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        dialogbox.dismiss();
+                        Toast.makeText(StudentGelary.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        },1000);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        dialogbox.dismiss();
         adepter.startListening();
     }
 }

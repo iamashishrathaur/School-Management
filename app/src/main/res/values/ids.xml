@@ -11,4 +11,7 @@
     <item name="recycle_student_class" type="id" />
     <item name="application_resion_edittext" type="id" />
     <item name="recycle_student_application_subject" type="id" />
+    <item name="teacher_application_resion_edittext" type="id" />
+    <item name="teacher_assignment_topic_edittext" type="id" />
+    <item name="recycle_student_assignment_subject" type="id" />
 </resources>

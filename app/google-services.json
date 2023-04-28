@@ -1,24 +1,25 @@
 {
   "project_info": {
     "project_number": "646320583860",
+    "firebase_url": "https://gpmadhogarh-c89e9-default-rtdb.firebaseio.com",
     "project_id": "gpmadhogarh-c89e9",
     "storage_bucket": "gpmadhogarh-c89e9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:646320583860:android:1eba61797dd1fd3a1813e1",
+        "mobilesdk_app_id": "1:646320583860:android:ddfa461a6f51eac01813e1",
         "android_client_info": {
           "package_name": "com.rathaur.gpm"
         }
       },
       "oauth_client": [
         {
-          "client_id": "646320583860-m81h3k4d7dulqc3d3du0kdq08vnt16ud.apps.googleusercontent.com",
+          "client_id": "646320583860-im68fgm5lmrfmiugva5572kt600s20cu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.rathaur.gpm",
-            "certificate_hash": "e17e7fe35ce1a01729df7c60c9a7c60e0ff53d07"
+            "certificate_hash": "33d7c843382c5f0498f47c35b8c06c466abe4447"
           }
         },
         {

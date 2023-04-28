@@ -35,7 +35,7 @@
         android:layout_marginHorizontal="50dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="We will send you an one time otp on this given mobile number"
+        android:text="We will send you an one date otp on this given mobile number"
         android:textColor="#636363"
         android:textSize="14sp" />
 
@@ -72,30 +72,23 @@
             android:background="@color/white"
             android:text="+91"
             android:textColor="@color/black" />
+
         <EditText
-            android:letterSpacing="0.04"
-            android:textColor="@color/black"
-            android:textColorHint="#959292"
-            android:autofillHints="phone"
-            android:layout_marginStart="10dp"
-            android:hint="0000000000"
-            android:textSize="15sp"
-            android:layout_marginEnd="10dp"
             android:id="@+id/user_mobile_number"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_marginVertical="2dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:autofillHints="phone"
             android:background="@color/white"
-            android:inputType="number" />
+            android:hint="0000000000"
+            android:inputType="number"
+            android:letterSpacing="0.04"
+            android:textColor="@color/black"
+            android:textColorHint="#757575"
+            android:textSize="15sp" />
     </LinearLayout>
-<ProgressBar
-    android:id="@+id/otp_progressbar"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:layout_below="@+id/et_mobile"
-    android:layout_marginHorizontal="30dp"
-    android:layout_marginTop="50dp"
-    android:background="@drawable/login_button"/>
     <TextView
         android:id="@+id/user_get_otp"
         android:layout_width="match_parent"

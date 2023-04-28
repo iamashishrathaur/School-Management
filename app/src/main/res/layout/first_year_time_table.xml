@@ -207,7 +207,7 @@
                     android:weightSum="2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                   <LinearLayout
+                   <RelativeLayout
                        android:background="#F2472C"
                        android:layout_marginVertical="1.5dp"
                        android:layout_marginHorizontal="1.5dp"
@@ -215,29 +215,44 @@
                        android:layout_weight="1"
                        android:gravity="center"
                        android:layout_height="match_parent">
+
+                       <ImageView
+                           android:id="@+id/timage1"
+                           android:layout_width="40dp"
+                           android:layout_height="40dp"
+                           android:layout_centerInParent="true"
+                           android:background="@drawable/clock"/>
                        <TextView
-                           android:layout_width="wrap_content"
-                           android:text="01:00"
+                           android:gravity="center"
+                           android:id="@+id/timeslot1"
+                           android:layout_width="match_parent"
                            android:textSize="13sp"
                            android:textColor="@color/white"
-                           android:layout_height="wrap_content"/>
-                   </LinearLayout>
-                    <LinearLayout
+                           android:layout_height="match_parent"/>
+                   </RelativeLayout>
+                    <RelativeLayout
                         android:background="#F2472C"
                         android:layout_marginVertical="1.5dp"
                         android:layout_marginHorizontal="1.5dp"
                         android:layout_width="0dp"
-                        android:gravity="center
-"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/timage2"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/clock"/>
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:text="01:00"
+                            android:gravity="center"
+                            android:id="@+id/timeslot2"
+                            android:layout_width="match_parent"
                             android:textSize="13sp"
                             android:textColor="@color/white"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
+                            android:layout_height="match_parent"/>
+                    </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -257,13 +272,33 @@
                        android:layout_marginBottom="1dp"
                        android:layout_weight="1"
                        android:layout_width="match_parent"
-                       android:layout_height="0dp"/>
+                       android:layout_height="0dp">
+                       <TextView
+                           android:id="@+id/monday_subject1"
+                           android:gravity="center"
+                           android:textColor="@color/black"
+                           android:hint="Subject"
+                           android:text=""
+                           android:textSize="16sp"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"/>
+                   </LinearLayout>
                    <LinearLayout
                        android:background="#ffffff"
                        android:layout_marginTop="1dp"
                        android:layout_weight="1"
                        android:layout_width="match_parent"
-                       android:layout_height="0dp"/>
+                       android:layout_height="0dp">
+                       <TextView
+                           android:id="@+id/monday_teacher1"
+                           android:gravity="center"
+                           android:textColor="@color/black"
+                           android:hint="Teacher"
+                           android:text=""
+                           android:textSize="16sp"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"/>
+                   </LinearLayout>
                </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -283,13 +318,32 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/tuesday_subject1"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/tuesday_teacher1"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -309,13 +363,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/wednesday_subject1"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/wednesday_teacher1"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -335,13 +409,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/thursday_subject1"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/thursday_teacher1"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -361,13 +455,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/friday_subject1"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/friday_teacher1"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -387,13 +501,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/saturday_subject1"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/saturday_teacher1"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -468,7 +602,7 @@
                     android:weightSum="2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                    <LinearLayout
+                    <RelativeLayout
                         android:background="#F2472C"
                         android:layout_marginVertical="1.5dp"
                         android:layout_marginHorizontal="1.5dp"
@@ -476,28 +610,89 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/timage3"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/clock"/>
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:text="01:00"
+                            android:gravity="center"
+                            android:id="@+id/timeslot3"
+                            android:layout_width="match_parent"
                             android:textSize="13sp"
                             android:textColor="@color/white"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                    <LinearLayout
+                            android:layout_height="match_parent"/>
+                    </RelativeLayout>
+                    <RelativeLayout
                         android:background="#F2472C"
                         android:layout_marginVertical="1.5dp"
                         android:layout_marginHorizontal="1.5dp"
                         android:layout_width="0dp"
-                        android:gravity="center
-"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/timage4"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/clock"/>
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:text="01:00"
+                            android:gravity="center"
+                            android:id="@+id/timeslot4"
+                            android:layout_width="match_parent"
                             android:textSize="13sp"
                             android:textColor="@color/white"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="match_parent"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardElevation="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:background="#E0E0E0"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:background="#ffffff"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/monday_subject2"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:background="#ffffff"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/monday_teacher2"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -518,13 +713,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/tuesday_subject2"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/tuesday_teacher2"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -544,13 +759,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/wednesday_subject2"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/wednesday_teacher2"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -570,13 +805,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/thursday_subject2"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/thursday_teacher2"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -596,13 +851,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/friday_subject2"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/friday_teacher2"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -622,39 +897,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/saturday_subject2"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                app:cardElevation="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent">
-                <LinearLayout
-                    android:background="#E0E0E0"
-                    android:orientation="vertical"
-                    android:weightSum="2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <LinearLayout
-                        android:background="#ffffff"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
-                    <LinearLayout
-                        android:background="#ffffff"
-                        android:layout_marginTop="1dp"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/saturday_teacher2"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -728,7 +997,7 @@
                     android:weightSum="2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                    <LinearLayout
+                    <RelativeLayout
                         android:background="#F2472C"
                         android:layout_marginVertical="1.5dp"
                         android:layout_marginHorizontal="1.5dp"
@@ -736,28 +1005,89 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/timage5"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/clock"/>
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:text="01:00"
+                            android:gravity="center"
+                            android:id="@+id/timeslot5"
+                            android:layout_width="match_parent"
                             android:textSize="13sp"
                             android:textColor="@color/white"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                    <LinearLayout
+                            android:layout_height="match_parent"/>
+                    </RelativeLayout>
+                    <RelativeLayout
                         android:background="#F2472C"
                         android:layout_marginVertical="1.5dp"
                         android:layout_marginHorizontal="1.5dp"
                         android:layout_width="0dp"
-                        android:gravity="center
-"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/timage6"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/clock"/>
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:text="01:00"
+                            android:gravity="center"
+                            android:id="@+id/timeslot6"
+                            android:layout_width="match_parent"
                             android:textSize="13sp"
                             android:textColor="@color/white"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="match_parent"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardElevation="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:background="#E0E0E0"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:background="#ffffff"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/monday_subject3"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:background="#ffffff"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/monday_teacher3"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -778,13 +1108,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/tuesday_subject3"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/tuesday_teacher3"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -804,13 +1154,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/wednesday_subject3"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/wednesday_teacher3"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -830,13 +1200,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/thursday_subject3"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/thursday_teacher3"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -856,13 +1246,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/friday_subject3"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/friday_teacher3"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -882,39 +1292,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/saturday_subject3"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                app:cardElevation="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent">
-                <LinearLayout
-                    android:background="#E0E0E0"
-                    android:orientation="vertical"
-                    android:weightSum="2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <LinearLayout
-                        android:background="#ffffff"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
-                    <LinearLayout
-                        android:background="#ffffff"
-                        android:layout_marginTop="1dp"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/saturday_teacher3"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -989,7 +1393,7 @@
                     android:weightSum="2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                    <LinearLayout
+                    <RelativeLayout
                         android:background="#F2472C"
                         android:layout_marginVertical="1.5dp"
                         android:layout_marginHorizontal="1.5dp"
@@ -997,28 +1401,89 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/timage7"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/clock"/>
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:text="01:00"
+                            android:gravity="center"
+                            android:id="@+id/timeslot7"
+                            android:layout_width="match_parent"
                             android:textSize="13sp"
                             android:textColor="@color/white"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                    <LinearLayout
+                            android:layout_height="match_parent"/>
+                    </RelativeLayout>
+                    <RelativeLayout
                         android:background="#F2472C"
                         android:layout_marginVertical="1.5dp"
                         android:layout_marginHorizontal="1.5dp"
                         android:layout_width="0dp"
-                        android:gravity="center
-"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/timage8"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/clock"/>
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:text="01:00"
+                            android:gravity="center"
+                            android:id="@+id/timeslot8"
+                            android:layout_width="match_parent"
                             android:textSize="13sp"
                             android:textColor="@color/white"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="match_parent"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardElevation="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:background="#E0E0E0"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:background="#ffffff"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/monday_subject4"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:background="#ffffff"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/monday_teacher4"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -1039,13 +1504,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/tuesday_subject4"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/tuesday_teacher4"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1065,13 +1550,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/wednesday_subject4"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/wednesday_teacher4"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1091,13 +1596,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/thursday_subject4"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/thursday_teacher4"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1117,13 +1642,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/friday_subject4"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/friday_teacher4"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1143,39 +1688,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/saturday_subject4"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                app:cardElevation="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent">
-                <LinearLayout
-                    android:background="#E0E0E0"
-                    android:orientation="vertical"
-                    android:weightSum="2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <LinearLayout
-                        android:background="#ffffff"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
-                    <LinearLayout
-                        android:background="#ffffff"
-                        android:layout_marginTop="1dp"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/saturday_teacher4"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1250,7 +1789,7 @@
                     android:weightSum="2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                    <LinearLayout
+                    <RelativeLayout
                         android:background="#F2472C"
                         android:layout_marginVertical="1.5dp"
                         android:layout_marginHorizontal="1.5dp"
@@ -1258,28 +1797,89 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/timage9"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/clock"/>
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:text="01:00"
+                            android:gravity="center"
+                            android:id="@+id/timeslot9"
+                            android:layout_width="match_parent"
                             android:textSize="13sp"
                             android:textColor="@color/white"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                    <LinearLayout
+                            android:layout_height="match_parent"/>
+                    </RelativeLayout>
+                    <RelativeLayout
                         android:background="#F2472C"
                         android:layout_marginVertical="1.5dp"
                         android:layout_marginHorizontal="1.5dp"
                         android:layout_width="0dp"
-                        android:gravity="center
-"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/timage10"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/clock"/>
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:text="01:00"
+                            android:gravity="center"
+                            android:id="@+id/timeslot10"
+                            android:layout_width="match_parent"
                             android:textSize="13sp"
                             android:textColor="@color/white"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="match_parent"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardElevation="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:background="#E0E0E0"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:background="#ffffff"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/monday_subject5"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:background="#ffffff"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/monday_teacher5"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -1300,13 +1900,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/tuesday_subject5"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/tuesday_teacher5"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1326,13 +1946,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/wednesday_subject5"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/wednesday_teacher5"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1352,13 +1992,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/thursday_subject5"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/thursday_teacher5"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1378,13 +2038,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/friday_subject5"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/friday_teacher5"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1404,39 +2084,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/saturday_subject5"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                app:cardElevation="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent">
-                <LinearLayout
-                    android:background="#E0E0E0"
-                    android:orientation="vertical"
-                    android:weightSum="2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <LinearLayout
-                        android:background="#ffffff"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
-                    <LinearLayout
-                        android:background="#ffffff"
-                        android:layout_marginTop="1dp"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/saturday_teacher5"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1511,7 +2185,7 @@
                     android:weightSum="2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                    <LinearLayout
+                    <RelativeLayout
                         android:background="#F2472C"
                         android:layout_marginVertical="1.5dp"
                         android:layout_marginHorizontal="1.5dp"
@@ -1519,28 +2193,89 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/timage11"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/clock"/>
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:text="01:00"
+                            android:gravity="center"
+                            android:id="@+id/timeslot11"
+                            android:layout_width="match_parent"
                             android:textSize="13sp"
                             android:textColor="@color/white"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                    <LinearLayout
+                            android:layout_height="match_parent"/>
+                    </RelativeLayout>
+                    <RelativeLayout
                         android:background="#F2472C"
                         android:layout_marginVertical="1.5dp"
                         android:layout_marginHorizontal="1.5dp"
                         android:layout_width="0dp"
-                        android:gravity="center
-"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/timage12"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/clock"/>
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:text="01:00"
+                            android:gravity="center"
+                            android:id="@+id/timeslot12"
+                            android:layout_width="match_parent"
                             android:textSize="13sp"
                             android:textColor="@color/white"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="match_parent"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardElevation="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:background="#E0E0E0"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:background="#ffffff"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/monday_subject6"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:background="#ffffff"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/monday_teacher6"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -1561,13 +2296,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/tuesday_subject6"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/tuesday_teacher6"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1587,13 +2342,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/wednesday_subject6"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/wednesday_teacher6"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1613,13 +2388,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/thursday_subject6"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/thursday_teacher6"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1639,13 +2434,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/friday_subject6"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/friday_teacher6"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1665,39 +2480,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/saturday_subject6"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                app:cardElevation="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent">
-                <LinearLayout
-                    android:background="#E0E0E0"
-                    android:orientation="vertical"
-                    android:weightSum="2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <LinearLayout
-                        android:background="#ffffff"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
-                    <LinearLayout
-                        android:background="#ffffff"
-                        android:layout_marginTop="1dp"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/saturday_teacher6"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1772,7 +2581,7 @@
                     android:weightSum="2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                    <LinearLayout
+                    <RelativeLayout
                         android:background="#F2472C"
                         android:layout_marginVertical="1.5dp"
                         android:layout_marginHorizontal="1.5dp"
@@ -1780,28 +2589,89 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/timage13"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/clock"/>
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:text="01:00"
+                            android:gravity="center"
+                            android:id="@+id/timeslot13"
+                            android:layout_width="match_parent"
                             android:textSize="13sp"
                             android:textColor="@color/white"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                    <LinearLayout
+                            android:layout_height="match_parent"/>
+                    </RelativeLayout>
+                    <RelativeLayout
                         android:background="#F2472C"
                         android:layout_marginVertical="1.5dp"
                         android:layout_marginHorizontal="1.5dp"
                         android:layout_width="0dp"
-                        android:gravity="center
-"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/timage14"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/clock"/>
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:text="01:00"
+                            android:gravity="center"
+                            android:id="@+id/timeslot14"
+                            android:layout_width="match_parent"
                             android:textSize="13sp"
                             android:textColor="@color/white"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="match_parent"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardElevation="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:background="#E0E0E0"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:background="#ffffff"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/monday_subject7"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:background="#ffffff"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/monday_teacher7"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -1822,13 +2692,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/tuesday_subject7"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/tuesday_teacher7"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1848,13 +2738,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/wednesday_subject7"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/wednesday_teacher7"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1874,13 +2784,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/thursday_subject7"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/thursday_teacher7"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1900,13 +2830,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/friday_subject7"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/friday_teacher7"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -1926,39 +2876,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/saturday_subject7"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                app:cardElevation="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent">
-                <LinearLayout
-                    android:background="#E0E0E0"
-                    android:orientation="vertical"
-                    android:weightSum="2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <LinearLayout
-                        android:background="#ffffff"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
-                    <LinearLayout
-                        android:background="#ffffff"
-                        android:layout_marginTop="1dp"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/saturday_teacher7"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -2016,7 +2960,7 @@
                             android:layout_height="wrap_content"
                             android:text="8"
                             android:textColor="@color/white"
-                            android:textSize="14dp"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
                     </RelativeLayout>
                 </LinearLayout>
@@ -2032,7 +2976,7 @@
                     android:weightSum="2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                    <LinearLayout
+                    <RelativeLayout
                         android:background="#F2472C"
                         android:layout_marginVertical="1.5dp"
                         android:layout_marginHorizontal="1.5dp"
@@ -2040,28 +2984,89 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/timage15"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/clock"/>
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:text="01:00"
-                            android:textSize="13dp"
+                            android:gravity="center"
+                            android:id="@+id/timeslot15"
+                            android:layout_width="match_parent"
+                            android:textSize="13sp"
                             android:textColor="@color/white"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                    <LinearLayout
+                            android:layout_height="match_parent"/>
+                    </RelativeLayout>
+                    <RelativeLayout
                         android:background="#F2472C"
                         android:layout_marginVertical="1.5dp"
                         android:layout_marginHorizontal="1.5dp"
                         android:layout_width="0dp"
-                        android:gravity="center
-"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/timage16"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/clock"/>
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:text="01:00"
-                            android:textSize="13dp"
+                            android:gravity="center"
+                            android:id="@+id/timeslot16"
+                            android:layout_width="match_parent"
+                            android:textSize="13sp"
                             android:textColor="@color/white"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="match_parent"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardElevation="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:background="#E0E0E0"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:background="#ffffff"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/monday_subject8"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:background="#ffffff"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/monday_teacher8"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -2082,13 +3087,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/tuesday_subject8"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/tuesday_teacher8"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -2108,13 +3133,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/wednesday_subject8"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/wednesday_teacher8"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -2134,13 +3179,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/thursday_subject8"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/thursday_teacher8"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -2160,13 +3225,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/friday_subject8"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/friday_teacher8"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -2186,39 +3271,33 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/saturday_subject8"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Subject"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:background="#ffffff"
                         android:layout_marginTop="1dp"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                app:cardElevation="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent">
-                <LinearLayout
-                    android:background="#E0E0E0"
-                    android:orientation="vertical"
-                    android:weightSum="2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <LinearLayout
-                        android:background="#ffffff"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
-                    <LinearLayout
-                        android:background="#ffffff"
-                        android:layout_marginTop="1dp"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/saturday_teacher8"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="Teacher"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView

@@ -1,12 +1,12 @@
 package com.rathaur.gpm.Adepter;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.rathaur.gpm.DataBase.Student;
+import com.rathaur.gpm.DataBaseModal.Student;
 import com.rathaur.gpm.R;
 import com.squareup.picasso.Picasso;
 
@@ -23,13 +23,27 @@ public class StudentAdepter extends FirebaseRecyclerAdapter<Student,StudentAdept
         super(options);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onBindViewHolder(@NonNull StudentAdepter.ViewHolder holder, int position, @NonNull Student model) {
-        Picasso.get().load(model.getSimage()).fit().placeholder(R.drawable.user_profile).into(holder.imageView);
+        Picasso.get().load(model.getSimage()).fit().placeholder(R.drawable.chat_user).into(holder.imageView);
         holder.name.setText(model.getSname());
         holder.mobile.setText(model.getSmobile());
-        holder.stander.setText(model.getSyear());
+        String year=model.getSyear();
+        if (year.equals("First Year"))
+        {
+            holder.stander.setText("I");
+        }
+        else if ( year.equals("Second Year")) {
+            holder.stander.setText("II");
+        }
+
+        else {
+            holder.stander.setText("III");
+        }
+
         holder.cardView.setAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(),R.anim.recycler_anim));
+
     }
 
     @NonNull
@@ -40,9 +54,11 @@ public class StudentAdepter extends FirebaseRecyclerAdapter<Student,StudentAdept
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
-        TextView name,mobile,stander;
-        CardView cardView;
+        final ImageView imageView;
+        final TextView name;
+        final TextView mobile;
+        final TextView stander;
+        final CardView cardView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView=itemView.findViewById(R.id.recycle_student_image);

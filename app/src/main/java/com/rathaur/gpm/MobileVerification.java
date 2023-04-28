@@ -1,20 +1,22 @@
 package com.rathaur.gpm;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.FirebaseApp;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.FirebaseException;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
@@ -22,7 +24,10 @@ import java.util.concurrent.TimeUnit;
 public class MobileVerification extends AppCompatActivity {
   EditText user_mobile;
   TextView user_otp;
-  ProgressBar progressBar;
+    private FirebaseAuth mAuth;
+    private String verificationId;
+    private String code;
+    Dialog dialogbox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,43 +35,18 @@ public class MobileVerification extends AppCompatActivity {
         getSupportActionBar().hide();
         user_mobile=findViewById(R.id.user_mobile_number);
         user_otp=findViewById(R.id.user_get_otp);
-        progressBar=findViewById(R.id.otp_progressbar);
-        progressBar.setVisibility(View.GONE);
+        dialogbox = new Dialog(this);
+        dialogbox.setContentView(R.layout.progress_dialog);
+        dialogbox.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        dialogbox.setCanceledOnTouchOutside(false);
+        mAuth = FirebaseAuth.getInstance();
         user_otp.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
               if (!user_mobile.getText().toString().isEmpty()){
                   if (user_mobile.getText().toString().trim().length()==10){
-                      progressBar.setVisibility(View.VISIBLE);
-                      user_otp.setVisibility(View.GONE);
-                      PhoneAuthProvider.getInstance().verifyPhoneNumber("+91" + user_mobile.getText().toString(), 30, TimeUnit.SECONDS, MobileVerification.this, new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-                          @Override
-                          public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                              progressBar.setVisibility(View.GONE);
-                              user_otp.setVisibility(View.VISIBLE);
-                          }
-                          @Override
-                          public void onVerificationFailed(@NonNull FirebaseException e) {
-                              progressBar.setVisibility(View.GONE);
-                              user_otp.setVisibility(View.VISIBLE);
-                              Toast.makeText(MobileVerification.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-                          }
-                          @Override
-                          public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                              super.onCodeSent(s, forceResendingToken);
-                              progressBar.setVisibility(View.GONE);
-                              user_otp.setVisibility(View.VISIBLE);
-                              SharedPreferences number= getSharedPreferences("user",MODE_PRIVATE);
-                              SharedPreferences.Editor editor=number.edit();
-                              editor.putString("mobile",user_mobile.getText().toString());
-                              editor.apply();
-                              Intent intent=new Intent(getApplicationContext(),OtpVerification.class);
-                              intent.putExtra("backendotp",s);
-                              intent.putExtra("umobile", user_mobile.getText().toString());
-
-                             startActivity(intent);
-                          }
-                      });
+                     dialogbox.show();
+                      sendVerificationCode(user_mobile.getText().toString().trim());
                   }
                   else {
                       Toast.makeText(MobileVerification.this, "Please enter Correct mobile number", Toast.LENGTH_SHORT).show();
@@ -79,4 +59,45 @@ public class MobileVerification extends AppCompatActivity {
        });
 
     }
+
+    private void sendVerificationCode(String mobile) {
+        PhoneAuthOptions options =
+                PhoneAuthOptions.newBuilder(mAuth)
+                        .setPhoneNumber("+91"+mobile)
+                        .setTimeout(60L, TimeUnit.SECONDS)
+                        .setActivity(this)
+                        .setCallbacks(mCallBack)
+                        .build();
+        PhoneAuthProvider.verifyPhoneNumber(options);
+    }
+    private final PhoneAuthProvider.OnVerificationStateChangedCallbacks
+            mCallBack = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+
+        @Override
+        public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+            super.onCodeSent(s, forceResendingToken);
+            SharedPreferences number= getSharedPreferences("user",MODE_PRIVATE);
+                              SharedPreferences.Editor editor=number.edit();
+                              editor.putString("mobile",user_mobile.getText().toString());
+                              editor.apply();
+                              Intent intent=new Intent(getApplicationContext(),OtpVerification.class);
+                              intent.putExtra("backendotp",s);
+                              intent.putExtra("umobile", user_mobile.getText().toString());
+                              startActivity(intent);
+            dialogbox.dismiss();
+            verificationId = s;
+        }
+
+        @Override
+        public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
+            dialogbox.dismiss();
+            code = phoneAuthCredential.getSmsCode();
+        }
+        @Override
+        public void onVerificationFailed(FirebaseException e) {
+            dialogbox.dismiss();
+            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    };
+
 }
