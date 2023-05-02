@@ -44,7 +44,7 @@ public class ChangePassword extends AppCompatActivity {
         DatabaseReference databaseReference = firebaseDatabase.getReference("student");
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.success_dialog);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(0));
         dialog.setCanceledOnTouchOutside(false);
         TextView dialogtext = dialog.findViewById(R.id.success_dialog_text);
         dialogtext.setText("Password Change successfully");

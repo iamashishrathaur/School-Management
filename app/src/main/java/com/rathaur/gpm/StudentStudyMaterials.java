@@ -85,10 +85,14 @@ public class StudentStudyMaterials extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()){
                            dialogbox.dismiss();
+                            emptyText.setVisibility(View.GONE);
+                            empty.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
                         }else {
                             dialogbox.dismiss();
                             emptyText.setVisibility(View.VISIBLE);
                             empty.setVisibility(View.VISIBLE);
+                            recyclerView.setVisibility(View.GONE);
                         }
                     }
 

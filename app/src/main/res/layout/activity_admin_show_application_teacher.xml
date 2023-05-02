@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context=".ShowComplaints">
+    tools:context=".AdminShowApplicationTeacher"
+    android:orientation="vertical">
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/tool_galery"
+        android:id="@+id/Apvar"
+        app:elevation="10dp"
         android:background="#F2472C"
         android:layout_width="match_parent"
         android:layout_height="50dp">
         <com.google.android.material.navigation.NavigationView
             android:background="#F2472C"
+            android:elevation="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <RelativeLayout
-                android:id="@+id/show_application_back_press"
+                android:id="@+id/admin_show_teacher_application_back_pressed"
                 android:layout_width="60dp"
                 android:layout_height="match_parent">
                 <ImageView
@@ -27,32 +29,22 @@
                     android:src="@drawable/ic_baseline_arrow_back_ios_24"
                     android:textColor="#ffffff"
                     android:textStyle="bold"
-                    android:textSize="18dp"/>
+                    android:textSize="18sp"/>
             </RelativeLayout>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="@font/adamina"
                 android:text="Application"
                 android:textAlignment="center"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
         </com.google.android.material.navigation.NavigationView>
     </com.google.android.material.appbar.AppBarLayout>
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/application_tab"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/admin_show_teacher_application"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:tabSelectedTextColor="#F2472C"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:layout_height="match_parent"/>
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/application_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="SpeakableTextPresentCheck" />
 </LinearLayout>

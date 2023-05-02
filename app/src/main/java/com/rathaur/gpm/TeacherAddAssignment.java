@@ -46,36 +46,25 @@ public class TeacherAddAssignment extends AppCompatActivity implements DatePicke
         lastdate=findViewById(R.id.last_time_assignment);
         @SuppressLint({"MissingInflatedId", "LocalSuppress"})
         RelativeLayout back=findViewById(R.id.teacher_assignment_back_pressed);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        back.setOnClickListener(view -> onBackPressed());
         ArrayAdapter<String> year=new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,Year);
         year.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(year);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String years=spinner.getSelectedItem().toString();
-                String sub= Objects.requireNonNull(subject.getText()).toString();
-                String topics= Objects.requireNonNull(topic.getText()).toString();
-                SharedPreferences sharedPreferences=getSharedPreferences("user",MODE_PRIVATE);
-                String tname=sharedPreferences.getString("name","");
-                String temail=sharedPreferences.getString("email","");
-                String tenrollment=sharedPreferences.getString("enrollment","");
-                String tprofession=sharedPreferences.getString("profession","");
-                Date date= Calendar.getInstance().getTime();
-                SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-                String sdate= dateFormat.format(date);
-                FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-                DatabaseReference databaseReference=firebaseDatabase.getReference("assignment");
-                Assignment assignment=new Assignment(tname,sub,years,topics,sdate,lastDate);
-                Calendar calendar = Calendar.getInstance();
-                String uid= String.valueOf(calendar.getTimeInMillis());
-                databaseReference.child(years).child(uid).setValue(assignment);
-            }
+        button.setOnClickListener(view -> {
+            String years=spinner.getSelectedItem().toString();
+            String sub= Objects.requireNonNull(subject.getText()).toString();
+            String topics= Objects.requireNonNull(topic.getText()).toString();
+            SharedPreferences sharedPreferences=getSharedPreferences("user",MODE_PRIVATE);
+            String tname=sharedPreferences.getString("name","");
+            Date date= Calendar.getInstance().getTime();
+            SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+            String sdate= dateFormat.format(date);
+            FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
+            DatabaseReference databaseReference=firebaseDatabase.getReference("assignment");
+            Assignment assignment=new Assignment(tname,sub,years,topics,sdate,lastDate);
+            Calendar calendar = Calendar.getInstance();
+            String uid= String.valueOf(calendar.getTimeInMillis());
+            databaseReference.child(years).child(uid).setValue(assignment);
         });
 
     }

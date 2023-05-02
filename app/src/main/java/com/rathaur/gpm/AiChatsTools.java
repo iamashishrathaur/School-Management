@@ -32,19 +32,20 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class AiChatsTools extends AppCompatActivity {
- RecyclerView recyclerView;
- EditText editText;
- ImageView send;
- RelativeLayout back;
- List<AiMessageModal> messageModalList;
- AiAdepter adepter;
-    public static final MediaType JSON
+   String API_KEY="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";
+   RecyclerView recyclerView;
+   EditText editText;
+   ImageView send;
+   RelativeLayout back;
+   List<AiMessageModal> messageModalList;
+   AiAdepter adepter;
+   public static final MediaType JSON
             = MediaType.get("application/json; charset=utf-8");
 
-    final OkHttpClient client = new OkHttpClient();
+   final OkHttpClient client = new OkHttpClient();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+   protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ai_chats_tools);
         Objects.requireNonNull(getSupportActionBar()).hide();
@@ -75,7 +76,7 @@ public class AiChatsTools extends AppCompatActivity {
         runOnUiThread(() -> {
             messageModalList.add(new AiMessageModal(message,sentBy));
             adepter.notifyDataSetChanged();
-            recyclerView.scrollToPosition(adepter.getItemCount()-1);
+            recyclerView.scrollToPosition(messageModalList.size());
         });
 
     }
@@ -98,7 +99,7 @@ public class AiChatsTools extends AppCompatActivity {
         }
         RequestBody body=RequestBody.create(jsonObject.toString(),JSON);
         Request request=new Request.Builder().url("https://api.openai.com/v1/completions")
-                .header("Authorization","Bearer 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")
+                .header("Authorization","Bearer "+API_KEY)
                 .post(body).build();
         client.newCall(request).enqueue(new Callback() {
             @Override

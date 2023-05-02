@@ -1,18 +1,14 @@
 package com.rathaur.gpm;
 
-import static com.google.android.gms.common.util.ClientLibraryUtils.getPackageInfo;
-
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,9 +20,9 @@ import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.pm.PackageInfoCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -45,7 +41,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
+import com.yalantis.ucrop.UCrop;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -54,23 +52,21 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
-
-import kotlin.Suppress;
+import java.util.UUID;
 
 public class Navigation_drawer extends AppCompatActivity {
-
-
    ActivityResultLauncher<String> mTakeImage;
-
-  int versioncode;
-  FirebaseRemoteConfig remoteConfig;
-  PackageInfo pInfo;
+   int versioncode;
+   FirebaseRemoteConfig remoteConfig;
+   PackageInfo pInfo;
+    Uri resultUri;
    DrawerLayout drawerLayout;
    RoundedImageView student_image;
    ImageSlider imageSlider;
    NavigationView navigationView;
-    SharedPreferences preferences=null;
-    SharedPreferences.Editor editor;
+   SharedPreferences preferences=null;
+   SharedPreferences.Editor editor;
+   String destUri;
    RelativeLayout card_subject,card_syllabus,card_timetable,card_s_list,card_attendance,
     card_homework,card_icard,card_t_list, card_chat_bot,card_gallery,card_complaints,
     card_video,card_events,card_application,card_study_material,
@@ -292,20 +288,41 @@ public class Navigation_drawer extends AppCompatActivity {
 
         mTakeImage=registerForActivityResult(new ActivityResultContracts.GetContent(), result -> {
             if (result!=null){
+                destUri= UUID.randomUUID().toString() + ".jpg";
+                UCrop.Options option=new UCrop.Options();
                 imageUri=result;
-                uplodeImage();
-                progressBar.setVisibility(View.VISIBLE);
-                progressBar.setProgress(1000);
+                UCrop.of(imageUri,Uri.fromFile(new File(getCacheDir(),destUri))).withOptions(option)
+                        .withAspectRatio(3,4)
+                        .withMaxResultSize(200,500)
+                        .start(Navigation_drawer.this);
+
             }
         });
-        student_image.setOnClickListener(view -> mTakeImage.launch("image/*"));
+        student_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mTakeImage.launch("image/*");
+            }
+        });
 
-        checkFirstTimeOpen();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == UCrop.REQUEST_CROP) {
+            resultUri = UCrop.getOutput(data);
+            uplodeImage();
+            progressBar.setVisibility(View.VISIBLE);
+            progressBar.setProgress(1000);
+        } else if (resultCode == UCrop.RESULT_ERROR) {
+            final Throwable cropError = UCrop.getError(data);
+        }
     }
 
     private void uplodeImage() {
         StorageReference storageReference=reference.child("StudentImage/"+senrollment);
-        storageReference.putFile(imageUri).addOnSuccessListener(taskSnapshot -> storageReference.getDownloadUrl().addOnSuccessListener(uri -> {
+        storageReference.putFile(resultUri).addOnSuccessListener(taskSnapshot -> storageReference.getDownloadUrl().addOnSuccessListener(uri -> {
          final Map<String,Object> map=new HashMap<>();
          map.put("simage",uri.toString());
          dpReference.child(senrollment).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -315,7 +332,7 @@ public class Navigation_drawer extends AppCompatActivity {
                      dpReference.child(senrollment).updateChildren(map).addOnCompleteListener(task -> {
                          progressBar.setProgress(0);
                          progressBar.setVisibility(View.GONE);
-                         student_image.setImageURI(imageUri);
+                         student_image.setImageURI(resultUri);
                          SharedPreferences sharedPreferences=getSharedPreferences("user",MODE_PRIVATE);
                          SharedPreferences.Editor editor=sharedPreferences.edit();
                          editor.putString("image",uri.toString());
@@ -363,15 +380,19 @@ public class Navigation_drawer extends AppCompatActivity {
             Toast.makeText(Navigation_drawer.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
         });
     }
-    private void checkFirstTimeOpen() {
-        preferences=getSharedPreferences("user",MODE_PRIVATE);
-        editor=preferences.edit();
-        if (isItFirstTime()) {
 
-            MediaPlayer player=MediaPlayer.create(this,R.raw.welcome_music);
-            player.setAuxEffectSendLevel(9);
-            player.start();
-        }
+    @Override
+    protected void onStart() {
+        super.onStart();
+            preferences=getSharedPreferences("user",MODE_PRIVATE);
+            editor=preferences.edit();
+            if (isItFirstTime()) {
+
+                MediaPlayer player=MediaPlayer.create(this,R.raw.welcome_music);
+                player.setAuxEffectSendLevel(9);
+                player.start();
+            }
+
     }
     public boolean isItFirstTime() {
         if (preferences.getBoolean("firstTime", true)) {

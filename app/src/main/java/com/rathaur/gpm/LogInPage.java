@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -42,7 +43,7 @@ public class LogInPage extends AppCompatActivity {
         privacy=findViewById(R.id.privacy);
         dialog=new Dialog(this);
         dialog.setContentView(R.layout.progress_dialog);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(0));
         dialog.setCanceledOnTouchOutside(false);
         dr1=FirebaseDatabase.getInstance().getReference("User");
         term.setOnClickListener(v -> {
@@ -159,8 +160,38 @@ public class LogInPage extends AppCompatActivity {
                                                   Toast.makeText(LogInPage.this, "wrong Password ", Toast.LENGTH_SHORT).show();
                                               }
                                           } else {
-                                              dialog.dismiss();
-                                              Toast.makeText(LogInPage.this, "user not exist", Toast.LENGTH_SHORT).show();
+                                              DatabaseReference databaseReference1=FirebaseDatabase.getInstance().getReference("admin");
+                                              databaseReference1.addValueEventListener(new ValueEventListener(){
+                                                  @Override
+                                                  public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                      if (snapshot.exists()) {
+                                                          String admin = snapshot.child("id").getValue(String.class);
+                                                          String pass = snapshot.child("password").getValue(String.class);
+                                                          if (Objects.equals(admin, userEnrollment)) {
+                                                              if (Objects.equals(pass, userPassword)) {
+                                                                  Intent intent = new Intent(getApplicationContext(), AdministratorActivity.class);
+                                                                  intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                                  startActivity(intent);
+                                                              }
+                                                              else {
+                                                                  dialog.dismiss();
+                                                                  Toast.makeText(LogInPage.this, "wrong Password ", Toast.LENGTH_SHORT).show();
+                                                              }
+                                                          }
+                                                          else {
+                                                              dialog.dismiss();
+                                                              Toast.makeText(LogInPage.this, "user not exist", Toast.LENGTH_SHORT).show();
+                                                          }
+                                                      }
+                                               }
+
+                                                  @Override
+                                                  public void onCancelled(@NonNull DatabaseError error) {
+                                                      dialog.dismiss();
+                                                      Toast.makeText(LogInPage.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+                                                  }
+                                              });
+
                                           }
                                       }
 

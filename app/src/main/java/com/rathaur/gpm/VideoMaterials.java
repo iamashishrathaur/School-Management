@@ -27,6 +27,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.rathaur.gpm.Adepter.StudentVideo;
 import com.rathaur.gpm.DataBaseModal.Video;
 
+import java.util.Objects;
+
 public class VideoMaterials extends AppCompatActivity {
     RecyclerView recyclerView;
     StudentVideo studentVideo;
@@ -38,7 +40,7 @@ public class VideoMaterials extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_video_materials);
         recyclerView=findViewById(R.id.video_recyclerView);
         addVideo=findViewById(R.id.add_video);
@@ -46,7 +48,7 @@ public class VideoMaterials extends AppCompatActivity {
         empty=findViewById(R.id.video_empty);
         dialogbox = new Dialog(this);
         dialogbox.setContentView(R.layout.progress_dialog);
-        dialogbox.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        Objects.requireNonNull(dialogbox.getWindow()).setBackgroundDrawable(new ColorDrawable(0));
         dialogbox.setCanceledOnTouchOutside(false);
         @SuppressLint({"MissingInflatedId", "LocalSuppress"})
         RelativeLayout back=findViewById(R.id.video_back_pressed);
@@ -84,10 +86,14 @@ public class VideoMaterials extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()){
                             dialogbox.dismiss();
+                            emptyText.setVisibility(View.GONE);
+                            empty.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
                         }else {
                           dialogbox.dismiss();
                           emptyText.setVisibility(View.VISIBLE);
                           empty.setVisibility(View.VISIBLE);
+                          recyclerView.setVisibility(View.GONE);
                         }
                     }
 

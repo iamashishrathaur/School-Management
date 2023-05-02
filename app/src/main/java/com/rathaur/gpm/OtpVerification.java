@@ -42,7 +42,7 @@ public class OtpVerification extends AppCompatActivity {
         submit = findViewById(R.id.submit_otp);
         Dialog dialogbox = new Dialog(this);
         dialogbox.setContentView(R.layout.progress_dialog);
-        dialogbox.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        Objects.requireNonNull(dialogbox.getWindow()).setBackgroundDrawable(new ColorDrawable(0));
         dialogbox.setCanceledOnTouchOutside(false);
         resend_otp.setVisibility(View.GONE);
         String mobile = getIntent().getStringExtra("umobile");

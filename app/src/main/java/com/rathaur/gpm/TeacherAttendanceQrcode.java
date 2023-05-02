@@ -3,16 +3,30 @@ package com.rathaur.gpm;
 import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.VIBRATE;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.rathaur.gpm.DataBaseModal.Attendance;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Objects;
 
 import eu.livotov.labs.android.camview.ScannerLiveView;
@@ -49,7 +63,39 @@ public class TeacherAttendanceQrcode extends AppCompatActivity {
 
             @Override
             public void onCodeScanned(String data) {
+                SharedPreferences sharedPreferences=getSharedPreferences("user",MODE_PRIVATE);
+                String enroll=sharedPreferences.getString("enrollment","");
+                Date date = Calendar.getInstance().getTime();
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+                String sdate = dateFormat.format(date);
+                DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("TeacherAttendanceCode");
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists()){
+                            String fdata=snapshot.child("code").getValue(String.class);
+                            Toast.makeText(TeacherAttendanceQrcode.this, ""+data, Toast.LENGTH_SHORT).show();
+                            if (Objects.equals(fdata, data)){
+                                Attendance attendance=new Attendance(enroll,"",true,sdate);
+                                DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("TeacherAttendance");
+                                databaseReference.child(enroll).push().setValue(attendance).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void unused) {
+                                       onBackPressed();
+                                    }
+                                });
+                            }
+                            else {
+                                Toast.makeText(TeacherAttendanceQrcode.this, "wrong qr code", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    }
 
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(TeacherAttendanceQrcode.this,error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
     }

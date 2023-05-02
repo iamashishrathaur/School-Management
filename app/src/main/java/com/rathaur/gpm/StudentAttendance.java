@@ -48,7 +48,7 @@ public class StudentAttendance extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
         dialog = new Dialog(this);
         dialog.setContentView(R.layout.progress_dialog);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(0));
         dialog.setCanceledOnTouchOutside(false);
         floatingActionButton = findViewById(R.id.student_attendance_floating_action_button);
         pieChart = findViewById(R.id.pie_chart);
@@ -108,9 +108,11 @@ public class StudentAttendance extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         dialog.show();
+        pieChart.setVisibility(View.GONE);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+
 
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("AttendanceInfo");
                 databaseReference.child(enroll);
@@ -118,6 +120,7 @@ public class StudentAttendance extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()) {
+                            pieChart.setVisibility(View.VISIBLE);
                             dialog.dismiss();
                             attendances.clear();
                             for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
@@ -127,6 +130,11 @@ public class StudentAttendance extends AppCompatActivity {
                             float a = attendances.size();
                             float b = 200 - a;
                             setData(b, a);
+                        }
+                        else {
+                            dialog.dismiss();
+                            pieChart.setVisibility(View.VISIBLE);
+                            setData(1,0);
                         }
 
                     }
@@ -139,6 +147,7 @@ public class StudentAttendance extends AppCompatActivity {
                 });
             }
         }, 500);
+//        setData(128, 12);
     }
 
     @Override

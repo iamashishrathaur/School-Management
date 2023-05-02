@@ -48,6 +48,8 @@ public class Wellcomelogin extends AppCompatActivity {
             list.add(new SlideItem(R.drawable.sc_6));
             list.add(new SlideItem(R.drawable.sc_7));
             list.add(new SlideItem(R.drawable.sc_8));
+            list.add(new SlideItem(R.drawable.sc_9));
+            list.add(new SlideItem(R.drawable.sc_10));
 
             adepter=new ViewPagerAdepter(list,viewPager);
             viewPager.setAdapter(adepter);

@@ -137,9 +137,9 @@
                 <ImageView
                     android:layout_marginTop="-10dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/writing"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:src="@drawable/subject"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     tools:ignore="ContentDescription" />
                 <TextView
                     android:layout_marginStart="-3dp"
@@ -471,8 +471,8 @@
                     android:layout_marginTop="-10dp"
                     android:layout_gravity="center"
                     android:src="@drawable/notic"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
                     tools:ignore="ContentDescription" />
                 <TextView
                     android:textColor="#394D71"

@@ -30,7 +30,8 @@
                     android:src="@drawable/ic_baseline_arrow_back_ios_24"
                     android:textColor="#ffffff"
                     android:textStyle="bold"
-                    android:textSize="18dp"/>
+                    android:textSize="18sp"
+                    android:importantForAccessibility="no" />
             </RelativeLayout>
             <TextView
                 android:layout_width="wrap_content"
@@ -40,7 +41,8 @@
                 android:textAlignment="center"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                tools:ignore="VisualLintOverlap" />
 
 
         </com.google.android.material.navigation.NavigationView>
@@ -51,14 +53,15 @@
 <RelativeLayout
 
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     >
     <ImageView
         android:forceHasOverlappingRendering="true"
         android:background="@drawable/school_details_image"
         android:layout_width="match_parent"
         android:layout_height="230dp"
-        tools:targetApi="n" />
+        tools:targetApi="n"
+        android:importantForAccessibility="no" />
     <TextView
         android:shadowDx="1"
         android:shadowDy="1"
@@ -152,7 +155,8 @@
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    tools:ignore="RelativeOverlap" />
             </RelativeLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -326,7 +330,6 @@
             <TextView
                 android:gravity="center"
                 android:textStyle="bold"
-                android:layout_alignParentEnd="true"
                 android:textSize="11sp"
                 android:textColor="#404F6D"
                 android:text="Email"

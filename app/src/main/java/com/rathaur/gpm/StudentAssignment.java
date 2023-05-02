@@ -25,6 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.rathaur.gpm.Adepter.AssignmentAdepter;
 import com.rathaur.gpm.DataBaseModal.Assignment;
 
+import java.util.Objects;
+
 public class StudentAssignment extends AppCompatActivity {
    RecyclerView recyclerView;
    AssignmentAdepter adepter;
@@ -38,24 +40,19 @@ public class StudentAssignment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_assignment);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         recyclerView=findViewById(R.id.assignment_recyclerView);
         emptyText=findViewById(R.id.student_assignment_empty_text);
         empty=findViewById(R.id.student_assignment_empty);
 
         dialogbox = new Dialog(this);
         dialogbox.setContentView(R.layout.progress_dialog);
-        dialogbox.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        Objects.requireNonNull(dialogbox.getWindow()).setBackgroundDrawable(new ColorDrawable(0));
         dialogbox.setCanceledOnTouchOutside(false);
 
         @SuppressLint({"MissingInflatedId", "LocalSuppress"})
         RelativeLayout back=findViewById(R.id.student_assignment_back_pressed);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        back.setOnClickListener(view -> onBackPressed());
         SharedPreferences sharedPreferences = getSharedPreferences("user", MODE_PRIVATE);
         year = sharedPreferences.getString("year", "");
         FirebaseRecyclerOptions<Assignment> assignment=new FirebaseRecyclerOptions.
@@ -70,32 +67,31 @@ public class StudentAssignment extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         dialogbox.show();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                adepter.startListening();
-               DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("assignment").child(year);
-                databaseReference.addListenerForSingleValueEvent(
-                        new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                if (snapshot.exists()){
-                                    dialogbox.dismiss();
-                                }
-                                else {
-                                    dialogbox.dismiss();
-                                    empty.setVisibility(View.VISIBLE);
-                                    emptyText.setVisibility(View.VISIBLE);
-                                }
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
+        new Handler().postDelayed(() -> {
+            adepter.startListening();
+           DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("assignment").child(year);
+            databaseReference.addListenerForSingleValueEvent(
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.exists()){
                                 dialogbox.dismiss();
+                                empty.setVisibility(View.GONE);
+                                emptyText.setVisibility(View.GONE);
+                            }
+                            else {
+                                dialogbox.dismiss();
+                                empty.setVisibility(View.VISIBLE);
+                                emptyText.setVisibility(View.VISIBLE);
                             }
                         }
-                );
-            }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            dialogbox.dismiss();
+                        }
+                    }
+            );
         },1000);
     }
 

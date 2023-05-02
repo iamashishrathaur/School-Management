@@ -33,6 +33,33 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="s">
         <activity
+            android:name=".TeacherAllotSubjectShowing"
+            android:exported="false" />
+        <activity
+            android:name=".TeacherAllotSubject"
+            android:exported="false" />
+        <activity
+            android:name=".AddNewTeacher"
+            android:exported="false" />
+        <activity
+            android:name=".AddNewStudent"
+            android:exported="false" />
+        <activity
+            android:name=".AdminTeacherAttendanceQrCode"
+            android:exported="false" />
+        <activity
+            android:name=".AdminAddNoticeTeacher"
+            android:exported="false" />
+        <activity
+            android:name=".AdminShowComplaintsTeacher"
+            android:exported="false" />
+        <activity
+            android:name=".AdminShowApplicationTeacher"
+            android:exported="false" />
+        <activity
+            android:name=".AdminLogin"
+            android:exported="false" />
+        <activity
             android:name=".TeacherAttendanceQrcode"
             android:exported="false" />
         <activity
@@ -91,16 +118,16 @@
             android:name=".TeacherNotice"
             android:exported="false" />
         <activity
-            android:name=".ShowApplication"
+            android:name=".AdminShowApplicationStudent"
             android:exported="false" />
         <activity
             android:name=".UpdateTimeTable"
             android:exported="false" />
         <activity
-            android:name=".ShowComplaints"
+            android:name=".AdminShowComplaintsStudent"
             android:exported="false" />
         <activity
-            android:name=".AddNotice"
+            android:name=".AdminAddNoticeStudent"
             android:exported="false" />
         <activity
             android:name=".TeacherAddAssignment"
@@ -346,6 +373,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

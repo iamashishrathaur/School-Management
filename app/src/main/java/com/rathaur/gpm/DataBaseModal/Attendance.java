@@ -1,27 +1,27 @@
 package com.rathaur.gpm.DataBaseModal;
 
 public class Attendance {
-    String studentId;
+    String enrollment;
     String subject;
     boolean isPresent;
     String date;
 
-    public Attendance(String studentId, String subject, boolean isPresent, String time) {
-        this.studentId = studentId;
+    public Attendance(String enrollment, String subject, boolean isPresent, String date) {
+        this.enrollment = enrollment;
         this.subject = subject;
         this.isPresent = isPresent;
-        this.date = time;
+        this.date = date;
     }
 
     public Attendance() {
     }
 
-    public String getStudentId() {
-        return studentId;
+    public String getEnrollment() {
+        return enrollment;
     }
 
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
+    public void setEnrollment(String enrollment) {
+        this.enrollment = enrollment;
     }
 
     public String getSubject() {

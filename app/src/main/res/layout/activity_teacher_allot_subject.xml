@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TeacherAllotSubject"
+    android:orientation="vertical">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/Apvar"
+        app:elevation="10dp"
+        android:background="#F2472C"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <RelativeLayout
+            android:background="#F2472C"
+            android:elevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/subject_allot_back_pressed"
+                android:layout_width="60dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_width="70dp"
+                    android:layout_height="20dp"
+                    android:fontFamily="@font/adamina"
+                    android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    tools:ignore="ContentDescription,RtlSymmetry" />
+            </RelativeLayout>
+            <TextView
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Subject Allocation"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/r1"
+        android:layout_below="@id/Apvar"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/user_ragistation_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Spinner
+            android:id="@+id/choose_allot_teacher"
+            android:paddingTop="5dp"
+            android:paddingStart="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:textSize="13sp"
+            android:layout_marginStart="20dp"
+            android:text="Select Teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <TextView
+        android:paddingEnd="10dp"
+        android:paddingStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@id/r1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/search_allot_subject"
+        android:hint="Select Subject"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textColorHint="@color/b8b8b8"
+        android:gravity="center_vertical"
+        android:background="@drawable/user_ragistation_border"
+        app:drawableEndCompat="@drawable/baseline_arrow_drop_down_24"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_below="@id/search_allot_subject"
+        android:id="@+id/allot_subject_submit"
+        android:elevation="10dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="Submit"
+        android:background="@drawable/login_button"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+</RelativeLayout>

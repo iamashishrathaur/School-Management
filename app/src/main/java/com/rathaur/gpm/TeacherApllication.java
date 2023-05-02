@@ -17,6 +17,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.rathaur.gpm.Adepter.ApplicationAdepter;
 import com.rathaur.gpm.DataBaseModal.Applications;
 
+import java.util.Objects;
+
 public class TeacherApllication extends AppCompatActivity {
     RecyclerView recyclerView;
     ApplicationAdepter adepter;
@@ -28,7 +30,7 @@ public class TeacherApllication extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_apllication);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         recyclerView = findViewById(R.id.teacher_application_showing);
         floatingActionButton=findViewById(R.id.teacher_add_application);
         back=findViewById(R.id.teacher_application_back_pressed);

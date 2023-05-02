@@ -51,7 +51,7 @@ public class ShowStudentHomework extends AppCompatActivity {
         textEmpty = findViewById(R.id.homework_empty_text);
         dialogbox= new Dialog(this);
         dialogbox.setContentView(R.layout.progress_dialog);
-        dialogbox.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        Objects.requireNonNull(dialogbox.getWindow()).setBackgroundDrawable(new ColorDrawable(0));
         dialogbox.setCanceledOnTouchOutside(false);
         LinearLayoutManager manager=new LinearLayoutManager(getApplicationContext());
         manager.setStackFromEnd(true);

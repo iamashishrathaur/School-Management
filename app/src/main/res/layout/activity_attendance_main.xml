@@ -6,39 +6,42 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".AttendanceMainActivity">
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/Apvar"
         app:elevation="10dp"
         android:background="#F2472C"
         android:layout_width="match_parent"
         android:layout_height="50dp">
-        <com.google.android.material.navigation.NavigationView
+        <RelativeLayout
             android:background="#F2472C"
             android:elevation="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <ImageView
-                android:id="@+id/add_student_back_pressed"
-                android:background="@drawable/edit_effect"
-                android:layout_height="20dp"
-                android:layout_width="wrap_content"
-                android:layout_gravity="start"
-                android:fontFamily="@font/adamina"
-                android:src="@drawable/ic_baseline_arrow_back_ios_24"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                tools:ignore="ContentDescription" />
+            <RelativeLayout
+                android:id="@+id/select_student_class_attendance_pressed"
+                android:layout_width="60dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_width="70dp"
+                    android:layout_height="20dp"
+                    android:fontFamily="@font/adamina"
+                    android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    tools:ignore="ContentDescription,RtlSymmetry" />
+            </RelativeLayout>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/adamina"
-                android:text="SELECT"
-                android:textAlignment="center"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:textSize="18sp"/>
-        </com.google.android.material.navigation.NavigationView>
+                android:textSize="18sp"
+                android:text="Select"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
     </com.google.android.material.appbar.AppBarLayout>
     <LinearLayout
         android:orientation="vertical"
@@ -93,6 +96,7 @@
             android:gravity="center"
             android:text="Submit"
             android:textColor="@color/white"
+            android:textStyle="bold"
             android:textSize="15sp"
             tools:ignore="RtlHardcoded" />
     </LinearLayout>

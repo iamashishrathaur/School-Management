@@ -72,6 +72,8 @@ public class StudentNotice extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()){
                             dialogbox.dismiss();
+                            empty.setVisibility(View.GONE);
+                            emptyText.setVisibility(View.GONE);
                         }
                         else {
                             dialogbox.dismiss();

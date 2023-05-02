@@ -39,7 +39,7 @@ public class AttendanceMainActivity extends AppCompatActivity {
     TextView classShow;
     String thirdSubSelection;
     Dialog dialog;
-
+     RelativeLayout back;
     final String [] classItem={"First Year", "Second Year","Third Year"};
     final String [] FirstSubject={"Communication Skill-I","Applied Mathematics-I","Applied Physics-I","Applied Chemistry","Fundamentals of Computer and Information Technology","Technical Drawing","Workshop Practice", "Applied Mathematics-II","Applied Physics-II","Basics of Electrical and Electronics Engineering","Multimedia & Animation","Concept of Programming Using C ","Office Automation Tools"};
     final String [] SecondSubject={"Applied Mathematics-III","Internet and Web Technology","Environmental Studies","Data Communication and Computer Networks","Data Structure Using C ","Digital Electronics ","Communication Skill-II ","Database Management System","E-Commerce and Digital Marketing","Energy Conservation","Universal Human Values "};
@@ -55,9 +55,10 @@ public class AttendanceMainActivity extends AppCompatActivity {
         subject = findViewById(R.id.relativeSubjectChoose);
         classShow = findViewById(R.id.choose_class_show_here);
         subjectShow = findViewById(R.id.choose_subject_show_here);
+        back=findViewById(R.id.select_student_class_attendance_pressed);
         dialog=new Dialog(this);
         dialog.setContentView(R.layout.progress_dialog);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(0));
         dialog.setCanceledOnTouchOutside(false);
     try {
 
@@ -81,6 +82,7 @@ public class AttendanceMainActivity extends AppCompatActivity {
                 Toast.makeText(AttendanceMainActivity.this, "error ", Toast.LENGTH_SHORT).show();
             }
         });
+        back.setOnClickListener(view -> onBackPressed());
 
         button.setOnClickListener(view -> {
             if (sub!=null){

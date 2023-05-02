@@ -95,12 +95,15 @@ public class StudentApplicationShow extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()) {
                             dialogbox.dismiss();
-
+                            textEmpty.setVisibility(View.GONE);
+                            empty.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
 
                         } else {
                             dialogbox.dismiss();
                             textEmpty.setVisibility(View.VISIBLE);
                             empty.setVisibility(View.VISIBLE);
+                            recyclerView.setVisibility(View.GONE);
                         }
                     }
 

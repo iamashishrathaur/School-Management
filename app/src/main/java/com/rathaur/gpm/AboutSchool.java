@@ -1,6 +1,7 @@
 package com.rathaur.gpm;
 
 import android.annotation.SuppressLint;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -68,18 +69,27 @@ public class AboutSchool extends AppCompatActivity {
                     mobile2.setText(snapshot.child("mobile2").getValue(String.class));
                     email1.setText(snapshot.child("email1").getValue(String.class));
                     email2.setText(snapshot.child("email2").getValue(String.class));
-                    Picasso.get().load(snapshot.child("uri").getValue(String.class)).fit().into(imageView, new Callback() {
-                        @Override
-                        public void onSuccess() {
-                            shimmerFrameLayout.stopShimmer();
-                        }
+                    String url=snapshot.child("uri").getValue(String.class);
 
-                        @Override
-                        public void onError(Exception e) {
-                            shimmerFrameLayout.stopShimmer();
-                            Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG).show();
-                        }
-                    });
+                    assert url != null;
+                    if (url.isEmpty()){
+                        shimmerFrameLayout.stopShimmer();
+                      imageView.setImageResource(R.drawable.school_image);
+                    }
+                    else {
+                        Picasso.get().load(snapshot.child("uri").getValue(String.class)).fit().into(imageView, new Callback() {
+                            @Override
+                            public void onSuccess() {
+                                shimmerFrameLayout.stopShimmer();
+                            }
+
+                            @Override
+                            public void onError(Exception e) {
+                                shimmerFrameLayout.stopShimmer();
+                                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
                 }
             }
 

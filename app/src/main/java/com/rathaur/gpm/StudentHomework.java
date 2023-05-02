@@ -48,7 +48,7 @@ public class StudentHomework extends AppCompatActivity implements DatePickerDial
         TextView button = dialog.findViewById(R.id.success_dialog_button);
         Dialog dialogbox = new Dialog(this);
         dialogbox.setContentView(R.layout.progress_dialog);
-        dialogbox.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        Objects.requireNonNull(dialogbox.getWindow()).setBackgroundDrawable(new ColorDrawable(0));
         dialogbox.setCanceledOnTouchOutside(false);
         calender=findViewById(R.id.calender_picker);
         textView=findViewById(R.id.date_time_formate);
@@ -91,8 +91,7 @@ public class StudentHomework extends AppCompatActivity implements DatePickerDial
                                         @Override
                                         public void onClick(View view) {
                                             dialog.dismiss();
-//                                            startActivity(new Intent(getApplicationContext(), ShowStudentHomework.class));
-//                                            finish();
+//
                                             onBackPressed();
                                         }
                                     });

@@ -1,8 +1,5 @@
 package com.rathaur.gpm;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
@@ -16,6 +13,9 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,8 +27,6 @@ import com.rathaur.gpm.DataBaseModal.Teacher;
 
 import java.util.Locale;
 import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class UserRagistation extends AppCompatActivity {
  Spinner gender,profession,student_year;
@@ -43,7 +41,7 @@ public class UserRagistation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_ragistation);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         gender=findViewById(R.id.user_gender);
         profession=findViewById(R.id.user_profession);
         name=findViewById(R.id.user_name);
@@ -56,12 +54,7 @@ public class UserRagistation extends AppCompatActivity {
         @SuppressLint({"MissingInflatedId", "LocalSuppress"})
 
         RelativeLayout back=findViewById(R.id.user_ragistation_back_pressed);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        back.setOnClickListener(view -> onBackPressed());
 
         ArrayAdapter<String> year=new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,Year);
         year.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -94,11 +87,11 @@ public class UserRagistation extends AppCompatActivity {
     public void Register(View view) {
         SharedPreferences preferences=getSharedPreferences("user",MODE_PRIVATE);
         String umobile= preferences.getString("mobile","");
-        String uname = name.getText().toString().trim();
-        String uemail = email.getText().toString().trim().toLowerCase(Locale.ROOT);
-        String uenrollment = enrollment.getText().toString().trim();
-        String upassword = password.getText().toString().trim();
-        String uconfirmPass = confirmPass.getText().toString().trim();
+        String uname = Objects.requireNonNull(name.getText()).toString().trim();
+        String uemail = Objects.requireNonNull(email.getText()).toString().trim().toLowerCase(Locale.ROOT);
+        String uenrollment = Objects.requireNonNull(enrollment.getText()).toString().trim();
+        String upassword = Objects.requireNonNull(password.getText()).toString().trim();
+        String uconfirmPass = Objects.requireNonNull(confirmPass.getText()).toString().trim();
         String ugender=gender.getSelectedItem().toString();
         String uprofession=profession.getSelectedItem().toString();
         String uyear=student_year.getSelectedItem().toString();
@@ -119,7 +112,7 @@ public class UserRagistation extends AppCompatActivity {
                                                 Dialog dialog = new Dialog(this);
                                                 dialog.setCanceledOnTouchOutside(false);
                                                 dialog.setContentView(R.layout.progress_dialog);
-                                                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                                                Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(0));
                                                 dialog.show();
                                                 firebaseDatabase = FirebaseDatabase.getInstance();
                                                 databaseReference = firebaseDatabase.getReference("student");
@@ -145,7 +138,7 @@ public class UserRagistation extends AppCompatActivity {
                                                 Dialog dialog = new Dialog(this);
                                                 dialog.setCanceledOnTouchOutside(false);
                                                 dialog.setContentView(R.layout.progress_dialog);
-                                                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                                                Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(0));
                                                 dialog.show();
                                                 databaseReference = firebaseDatabase.getReference("teacher");
                                                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -204,28 +197,4 @@ public class UserRagistation extends AppCompatActivity {
                 name.requestFocus();
             }
             }
-    private boolean isPasswordValidMethod(String pass) {
-
-        String yourString = Objects.requireNonNull(password.getText()).toString();
-
-        System.out.println("yourString is =" + yourString);
-
-        boolean isValid = false;
-
-        // ^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$
-        // ^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$
-
-        String expression = "^(?=.*[A-Za-z])(?=.*\\\\d)(?=.*[$@$!%*#?&])[A-Za-z\\\\d$@$!%*#?&]{8,}$";
-        CharSequence inputStr = password.getText().toString();
-
-        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(inputStr);
-        if (matcher.matches()) {
-            System.out.println("if");
-            isValid = true;
-        }else{
-            System.out.println("else");
-        }
-        return isValid;
-    }
-    }
+}

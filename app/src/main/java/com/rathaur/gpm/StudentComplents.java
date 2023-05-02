@@ -58,7 +58,7 @@ public class StudentComplents extends AppCompatActivity {
         smobile=sharedPreferences.getString("mobile","");
         dialogbox = new Dialog(this);
         dialogbox.setContentView(R.layout.progress_dialog);
-        dialogbox.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        Objects.requireNonNull(dialogbox.getWindow()).setBackgroundDrawable(new ColorDrawable(0));
         dialogbox.setCanceledOnTouchOutside(false);
         @SuppressLint({"MissingInflatedId", "LocalSuppress"})
         RelativeLayout back=findViewById(R.id.student_complaints_back_pressed);
@@ -91,11 +91,15 @@ public class StudentComplents extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()) {
+                            emptyText.setVisibility(View.GONE);
+                            empty.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
                             dialogbox.dismiss();
                         } else {
                             dialogbox.dismiss();
                             emptyText.setVisibility(View.VISIBLE);
                             empty.setVisibility(View.VISIBLE);
+                            recyclerView.setVisibility(View.GONE);
                         }
                     }
                     @Override

@@ -23,6 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.rathaur.gpm.Adepter.TeacherAdepter;
 import com.rathaur.gpm.DataBaseModal.Teacher;
 
+import java.util.Objects;
+
 public class TeacherList extends AppCompatActivity {
 RecyclerView recyclerView;
 TeacherAdepter adepter;
@@ -31,12 +33,12 @@ Dialog dialog;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_list);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         recyclerView=findViewById(R.id.Teacher_list_recyclerView);
         dialog =new Dialog(this);
         dialog.setCanceledOnTouchOutside(false);
         dialog.setContentView(R.layout.progress_dialog);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(0));
         @SuppressLint({"MissingInflatedId", "LocalSuppress"})
         RelativeLayout back=findViewById(R.id.teacher_list_back_pressed);
         back.setOnClickListener(new View.OnClickListener() {

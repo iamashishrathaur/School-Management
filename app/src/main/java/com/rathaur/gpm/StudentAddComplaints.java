@@ -27,6 +27,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 
 public class StudentAddComplaints extends AppCompatActivity {
   TextView button;
@@ -54,18 +55,18 @@ public class StudentAddComplaints extends AppCompatActivity {
         smobile=sharedPreferences.getString("mobile","");
         Dialog dialog=new Dialog(this);
         dialog.setContentView(R.layout.success_dialog);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(0));
         dialog.setCanceledOnTouchOutside(false);
 
         /// progress dialog
         Dialog pdialog=new Dialog(this);
         pdialog.setContentView(R.layout.progress_dialog);
-        pdialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        Objects.requireNonNull(pdialog.getWindow()).setBackgroundDrawable(new ColorDrawable(0));
         pdialog.setCanceledOnTouchOutside(false);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!complaints.getText().toString().trim().isEmpty()){
+                if (!Objects.requireNonNull(complaints.getText()).toString().trim().isEmpty()){
                       String scomplaints=complaints.getText().toString();
                       reference.orderByChild("senrollment").equalTo(senrollment).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override

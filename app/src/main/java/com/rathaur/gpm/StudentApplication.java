@@ -25,6 +25,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 
 public class StudentApplication extends AppCompatActivity {
     TextInputEditText subject,resions;
@@ -66,8 +67,8 @@ public class StudentApplication extends AppCompatActivity {
 
     public void applicatioSubmit(View view) {
         dialog.show();
-        String s=subject.getText().toString();
-        String r=resions.getText().toString();
+        String s= Objects.requireNonNull(subject.getText()).toString();
+        String r= Objects.requireNonNull(resions.getText()).toString();
         Date date= Calendar.getInstance().getTime();
         SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
         String sdate= dateFormat.format(date);

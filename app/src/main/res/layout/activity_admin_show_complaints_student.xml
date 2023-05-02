@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ShowComplaints">
+    tools:context=".AdminShowComplaintsStudent">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/tool_galery"
         android:background="#F2472C"
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <RelativeLayout
-            android:id="@+id/show_complaints_back_press"
+            android:id="@+id/show_student_complaints_back_press"
             android:layout_width="60dp"
             android:layout_height="match_parent">
             <ImageView
@@ -42,15 +42,8 @@
             android:textSize="18dp"/>
     </com.google.android.material.navigation.NavigationView>
     </com.google.android.material.appbar.AppBarLayout>
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/complaints_tab"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:tabSelectedTextColor="#F2472C"
-        tools:ignore="SpeakableTextPresentCheck" />
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/complaints_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/admin_show_student_complaints_recycler_view"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
 </LinearLayout>
