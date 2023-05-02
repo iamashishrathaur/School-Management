@@ -235,5 +235,6 @@ public class LogInPage extends AppCompatActivity {
         if ( dialog!=null && dialog.isShowing() ){
             dialog.cancel();
         }
+
     }
 }

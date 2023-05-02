@@ -193,9 +193,6 @@ public class NavigationDrawerTeacher extends AppCompatActivity {
             if (id == R.id.privacy_teacher) {
                 startActivity(new Intent(NavigationDrawerTeacher.this, PrivacyPolicy.class));
             }
-            if (id==R.id.admin_login_teacher){
-                startActivity(new Intent(NavigationDrawerTeacher.this, AdminLogin.class));
-            }
             if (id == R.id.change_password_teacher) {
                 startActivity(new Intent(NavigationDrawerTeacher.this, TeacherChangePassword.class));
             }

@@ -7,41 +7,75 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/Apvar"
-        app:elevation="10dp"
-        android:background="#F2472C"
+        android:id="@+id/navigation_click"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
-        <com.google.android.material.navigation.NavigationView
-            android:background="#F2472C"
+        android:elevation="10dp"
+        android:layout_height="55dp">
+        <androidx.appcompat.widget.Toolbar
             android:elevation="10dp"
+            android:background="#F2472C"
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <RelativeLayout
-                android:id="@+id/admin_back_pressed"
-                android:layout_width="60dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <ImageView
+                <RelativeLayout
                     android:layout_centerVertical="true"
-                    android:layout_width="70dp"
-                    android:layout_height="20dp"
-                    android:fontFamily="@font/adamina"
-                    android:src="@drawable/ic_baseline_arrow_back_ios_24"
-                    android:textColor="#ffffff"
+                    android:background="@drawable/logo_border"
+                    android:id="@+id/image"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/book"
+                        tools:ignore="ContentDescription" />
+                </RelativeLayout>
+
+                <TextView
+                    android:letterSpacing="0.04"
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/image"
                     android:textStyle="bold"
-                    android:textSize="18sp"/>
+                    android:text="mySchool"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/image"
+                    android:text="Your Digital Manager"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="9sp"
+                    android:textStyle="bold"
+                    tools:ignore="SmallSp,TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/sesion_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/actor"
+                    android:gravity="center"
+                    android:text="2021-2022"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    tools:ignore="HardcodedText,SmallSp,TextContrastCheck" />
             </RelativeLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/adamina"
-                android:text="Administrator"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
-        </com.google.android.material.navigation.NavigationView>
+        </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
     <ScrollView
         android:layout_width="match_parent"

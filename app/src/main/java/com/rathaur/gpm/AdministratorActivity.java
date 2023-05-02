@@ -30,7 +30,6 @@ public class AdministratorActivity extends AppCompatActivity {
        slideModels.add(new SlideModel(R.drawable.id_card,"", ScaleTypes.FIT));
        slideModels.add(new SlideModel(R.drawable.id_card,"", ScaleTypes.FIT));
        binding.adminImageSlider.setImageList(slideModels);
-        binding.adminBackPressed.setOnClickListener(view -> onBackPressed());
 
         binding.cardAdministorNotice.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), AdminAddNoticeStudent.class)));
         binding.cardAdmistorComplaints.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), AdminShowComplaintsStudent.class)));
